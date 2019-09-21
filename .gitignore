@@ -1,0 +1,26 @@
+# System generated files
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Development/Environment
+.env
+.env.*
+!.env.example
+dist
+dist-*
+public
+.cache
+.serverless
+_optimize
+/netlify.toml
+
+# Temporary
+temp
+temp-*

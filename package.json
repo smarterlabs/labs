@@ -1,0 +1,50 @@
+{
+	"name": "smarterlabs",
+	"author": "Kennedy Rose <kennedy@smarterlabs.com>",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"bootstrap": "npx lerna bootstrap --use-workspaces",
+		"build": "npx lerna run build --stream",
+		"clean": "rm -rf public && npx lerna run clean --stream --no-sort --concurrency 999",
+		"deploy": "npx lerna run deploy --stream --no-sort --concurrency 999",
+		"deploy:production": "npx lerna run deploy:production --stream --no-sort --concurrency 999",
+		"deploy:staging": "npx lerna run deploy:staging --stream --no-sort --concurrency 999",
+		"dev": "npx lerna run dev --stream --no-sort --concurrency 999",
+		"develop": "yarn run dev",
+		"lint": "npx eslint ./",
+		"lint:fix": "npx eslint ./ --fix",
+		"open": "npx lerna run open",
+		"patch": "npx lerna run patch",
+		"serve": "npx lerna run serve",
+		"start": "yarn run dev",
+		"test": "jest"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"**/*.js": [
+			"eslint --fix",
+			"git add"
+		]
+	},
+	"workspaces": [
+		"packages/*",
+		"packages/@smarterlabs/*"
+	],
+	"devDependencies": {
+		"@testing-library/jest-dom": "^4.1.0",
+		"@testing-library/react": "^9.1.4",
+		"child-process-promise": "^2.2.1",
+		"eslint": "^6.1.0",
+		"husky": "^3.0.3",
+		"jest": "^24.9.0",
+		"lint-staged": "^9.2.1",
+		"open-cli": "^5.0.0",
+		"yarn": "^1.17.3"
+	},
+	"dependencies": {}
+}

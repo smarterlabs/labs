@@ -1,0 +1,9 @@
+{
+	"packages": [
+		"packages/*",
+		"packages/@smarterlabs/*"
+	],
+	"version": "independent",
+	"npmClient": "yarn",
+	"useWorkspaces": true
+}
