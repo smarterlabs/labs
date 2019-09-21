@@ -1,0 +1,79 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:12.6
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-v1-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache
+      - run:
+          name: Build Applications
+          command: yarn run build
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Test
+          command: yarn run test
+  deploy-production:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Deploy Applications to Production
+          command: yarn run deploy:production
+  deploy-staging:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Deploy Applications to Staging
+          command: yarn run deploy:staging
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build:
+          context: default
+      - test:
+          context: default
+          requires:
+            - build
+      - deploy-production:
+          filters:
+            branches:
+              only: master
+          context: default
+          requires:
+            - test
+      - deploy-staging:
+          filters:
+            branches:
+              ignore: master
+          context: default
+          requires:
+            - test
