@@ -42,8 +42,11 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Authenticate with npm
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+          name: Authenticate with npm 1
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/packages/@smarterlabs/babel-preset/.npmrc
+      - run:
+          name: Authenticate with npm 2
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/packages/@smarterlabs/eslint-config/.npmrc
       - run:
           name: Deploy Applications to Production
           command: yarn run deploy:production
