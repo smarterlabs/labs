@@ -3,7 +3,7 @@
 	"version": "1.0.1",
 	"main": "index.js",
 	"scripts": {
-		"deploy": "npm publish"
+		"deploy:production": "npm publish"
 	},
 	"peerDependencies": {
 		"eslint": ">= 3"
