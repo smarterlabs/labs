@@ -43,7 +43,7 @@ jobs:
           at: ~/repo
       - run:
           name: LS
-          command: cd repo && ls
+          command: cd ~/repo && ls
       - run:
           name: Authenticate with npm 1
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/packages/@smarterlabs/babel-preset/.npmrc
