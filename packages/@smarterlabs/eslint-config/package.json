@@ -1,5 +1,5 @@
 {
-	"name": "@smarterlabs/eslint-config",
+	"name": "eslint-config-smarter-labs",
 	"version": "1.0.4",
 	"main": "index.js",
 	"scripts": {
