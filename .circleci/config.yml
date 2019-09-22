@@ -28,14 +28,14 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  # test:
-  #   <<: *defaults
-  #   steps:
-  #     - attach_workspace:
-  #         at: ~/repo
-  #     - run:
-  #         name: Test
-  #         command: yarn run test
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Test
+          command: yarn run test
   deploy-production:
     <<: *defaults
     steps:
@@ -62,21 +62,21 @@ workflows:
     jobs:
       - build:
           context: default
-      # - test:
-      #     context: default
-      #     requires:
-      #       - build
+      - test:
+          context: default
+          requires:
+            - build
       - deploy-production:
           filters:
             branches:
               only: master
           context: default
-          # requires:
-          #   - test
+          requires:
+            - test
       - deploy-staging:
           filters:
             branches:
               ignore: master
           context: default
-          # requires:
-          #   - test
+          requires:
+            - test
