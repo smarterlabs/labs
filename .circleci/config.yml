@@ -55,7 +55,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/packages/@smarterlabs/eslint-config/.npmrc
       - run:
           name: Deploy Applications to Production
-          command: cd packages/@smarterlabs/eslint-config && yarn run deploy:production
+          command: cd packages/@smarterlabs/eslint-config && cat .npmrc && yarn run deploy:production
   deploy-staging:
     <<: *defaults
     steps:
