@@ -2,6 +2,9 @@
 	"name": "@smarterlabs/babel-preset",
 	"version": "1.0.0",
 	"main": "index.js",
+	"scripts": {
+		"deploy": "npm publish"
+	},
 	"peerDependencies": {
 		"eslint": ">= 3"
 	},
