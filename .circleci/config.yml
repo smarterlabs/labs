@@ -28,14 +28,14 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Test
-          command: yarn run test
+  # test:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/repo
+  #     - run:
+  #         name: Test
+  #         command: yarn run test
   deploy-production:
     <<: *defaults
     steps:
@@ -51,14 +51,11 @@ jobs:
           name: Authenticate with npm root
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
-          name: Authenticate with npm 1
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/packages/@smarterlabs/babel-preset/.npmrc
-      - run:
-          name: Authenticate with npm 2
+          name: Authenticate with npm
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/packages/@smarterlabs/eslint-config/.npmrc
       - run:
           name: Deploy Applications to Production
-          command: yarn run deploy:production
+          command: cd packages/@smarterlabs/eslint-config && yarn run deploy:production
   deploy-staging:
     <<: *defaults
     steps:
@@ -74,21 +71,21 @@ workflows:
     jobs:
       - build:
           context: default
-      - test:
-          context: default
-          requires:
-            - build
+      # - test:
+      #     context: default
+      #     requires:
+      #       - build
       - deploy-production:
           filters:
             branches:
               only: master
           context: default
           requires:
-            - test
+            - build
       - deploy-staging:
           filters:
             branches:
               ignore: master
           context: default
           requires:
-            - test
+            - build
