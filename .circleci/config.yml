@@ -47,12 +47,9 @@ jobs:
       - run:
           name: Echo env variable
           command: echo "$NPM_TOKEN"
-      - run:
-          name: Authenticate with npm - root
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-      - run:
-          name: Authenticate with npm - repo
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
+      # - run:
+      #     name: Authenticate with npm - repo
+      #     command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
       - run:
           name: Authenticate with npm - package
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/packages/@smarterlabs/eslint-config/.npmrc
