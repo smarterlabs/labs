@@ -18,7 +18,8 @@
 		"patch": "npx lerna run patch",
 		"serve": "npx lerna run serve",
 		"start": "yarn run dev",
-		"test": "jest"
+		"test": "jest",
+		"version": "npx lerna version"
 	},
 	"husky": {
 		"hooks": {

@@ -2,11 +2,6 @@
 	"name": "@smarterlabs/eslint-config",
 	"version": "0.0.0",
 	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/smarterlabs/labs.git",
-		"directory": "packages/@smarterlabs/eslint-config"
-	},
 	"peerDependencies": {
 		"eslint": ">= 3"
 	},
