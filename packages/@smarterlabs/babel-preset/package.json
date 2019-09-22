@@ -13,5 +13,6 @@
 		"eslint-plugin-jest": "^22.17.0",
 		"eslint-plugin-jsx-a11y": "^6.1.1",
 		"eslint-plugin-react": "^7.10.0"
-	}
+	},
+	"gitHead": "c5053c0ebc4445cfb55b997f96c99b8041e6cddb"
 }
