@@ -3,7 +3,7 @@
 	"version": "1.0.2",
 	"main": "index.js",
 	"scripts": {
-		"deploy:production": "npm publish"
+		"deploy:production": "npm publish --access public"
 	},
 	"peerDependencies": {
 		"eslint": ">= 3"
@@ -14,5 +14,5 @@
 		"eslint-plugin-jsx-a11y": "^6.1.1",
 		"eslint-plugin-react": "^7.10.0"
 	},
-	"gitHead": "c5053c0ebc4445cfb55b997f96c99b8041e6cddb"
+	"gitHead": "15d7af5b2795524d6d0503171d918121ecd85891"
 }
