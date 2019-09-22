@@ -3,7 +3,7 @@
 	"version": "1.0.3",
 	"main": "index.js",
 	"scripts": {
-		"deploy:production": "npm publish --access public"
+		"deploy:production": "echo \"//registry.npmjs.org/:_authToken=$NPM_TOKEN\" > .npmrc && npm publish --access public"
 	},
 	"peerDependencies": {
 		"eslint": ">= 3"
