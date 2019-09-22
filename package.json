@@ -6,6 +6,7 @@
 	"scripts": {
 		"bootstrap": "npx lerna bootstrap --use-workspaces",
 		"build": "npx lerna run build --stream",
+		"circle": "npx open-cli https://circleci.com/gh/kennedyrose/smarter-labs",
 		"clean": "rm -rf public && npx lerna run clean --stream --no-sort --concurrency 999",
 		"deploy": "npx lerna run deploy --stream --no-sort --concurrency 999",
 		"deploy:production": "npx lerna run deploy:production --stream --no-sort --concurrency 999",

@@ -71,12 +71,12 @@ workflows:
             branches:
               only: master
           context: default
-          requires:
-            - test
+          # requires:
+          #   - test
       - deploy-staging:
           filters:
             branches:
               ignore: master
           context: default
-          requires:
-            - test
+          # requires:
+          #   - test
