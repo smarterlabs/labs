@@ -1,6 +1,6 @@
 {
 	"name": "@smarterlabs/babel-preset",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"main": "index.js",
 	"peerDependencies": {
 		"eslint": ">= 3"
@@ -10,6 +10,5 @@
 		"eslint-plugin-jest": "^22.17.0",
 		"eslint-plugin-jsx-a11y": "^6.1.1",
 		"eslint-plugin-react": "^7.10.0"
-	},
-	"devDependencies": {}
+	}
 }
