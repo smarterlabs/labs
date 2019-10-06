@@ -1,6 +1,7 @@
 {
 	"packages": [
 		"packages/*",
+		"packages/@app-boilerplate/*",
 		"packages/@smarterlabs/*"
 	],
 	"version": "independent",
