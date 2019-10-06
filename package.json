@@ -20,7 +20,7 @@
 		"serve": "npx lerna run serve",
 		"start": "yarn run dev",
 		"test": "jest",
-		"version": "npx lerna version --ignore-changes 'packages/@app-boilerplate/gatsby'"
+		"version": "npx lerna version --ignore-changes '@app-boilerplate/gatsby'"
 	},
 	"husky": {
 		"hooks": {
