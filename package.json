@@ -35,6 +35,7 @@
 	},
 	"workspaces": [
 		"packages/*",
+		"packages/@app-boilerplate/*",
 		"packages/@smarterlabs/*"
 	],
 	"devDependencies": {
