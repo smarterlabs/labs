@@ -2,5 +2,14 @@
 	"name": "gatsby-plugin-browser-dependencies",
 	"version": "0.0.0",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
-	"main": "index.js"
+	"main": "index.js",
+	"keywords": [
+		"gatsby",
+		"gatsby-plugin",
+		"browser",
+		"client",
+		"modules",
+		"dependencies",
+		"babel"
+	]
 }
