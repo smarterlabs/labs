@@ -1,0 +1,6 @@
+{
+	"name": "gatsby-plugin-browser-dependencies",
+	"version": "0.0.0",
+	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
+	"main": "index.js"
+}
