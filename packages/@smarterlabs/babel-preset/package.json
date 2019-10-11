@@ -1,8 +1,25 @@
 {
 	"name": "@smarterlabs/babel-preset",
+	"description": "A Babel preset for JavaScript projects.",
 	"version": "1.0.5",
 	"main": "index.js",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smarterlabs/labs.git",
+		"directory": "packages/@smarterlabs/babel-preset"
+	},
+	"homepage": "https://github.com/smarterlabs/labs/tree/master/packages/@smarterlabs/babel-preset#readme",
+	"bugs": {
+		"url": "https://github.com/smarterlabs/labs/issues"
+	},
+	"keywords": [
+		"smarter",
+		"labs",
+		"babel",
+		"preset"
+	],
 	"peerDependencies": {
 		"eslint": ">= 3"
 	},

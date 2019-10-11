@@ -1,8 +1,25 @@
 {
 	"name": "@smarterlabs/eslint-config",
+	"description": "An ESLint config for JavaScript projects.",
 	"version": "1.0.5",
 	"main": "index.js",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smarterlabs/labs.git",
+		"directory": "packages/@smarterlabs/eslint-config"
+	},
+	"homepage": "https://github.com/smarterlabs/labs/tree/master/packages/@smarterlabs/eslint-config#readme",
+	"bugs": {
+		"url": "https://github.com/smarterlabs/labs/issues"
+	},
+	"keywords": [
+		"smarter",
+		"labs",
+		"eslint",
+		"config"
+	],
 	"peerDependencies": {
 		"eslint": ">= 3"
 	},
