@@ -1,7 +1,7 @@
 {
 	"name": "@smarterlabs/eslint-config",
 	"description": "An ESLint config for JavaScript projects.",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"main": "index.js",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
 	"license": "MIT",
