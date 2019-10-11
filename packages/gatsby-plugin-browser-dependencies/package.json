@@ -1,7 +1,18 @@
 {
 	"name": "gatsby-plugin-browser-dependencies",
+	"description": "Excludes browser-only dependencies from your SSR builds in Gatsby.",
 	"version": "1.0.0",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smarterlabs/labs.git",
+		"directory": "packages/gatsby-plugin-browser-dependencies"
+	},
+	"homepage": "https://github.com/smarterlabs/labs/tree/master/packages/gatsby-plugin-browser-dependencies#readme",
+	"bugs": {
+		"url": "https://github.com/smarterlabs/labs/issues"
+	},
 	"main": "index.js",
 	"keywords": [
 		"gatsby",
