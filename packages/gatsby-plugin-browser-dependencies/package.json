@@ -1,7 +1,7 @@
 {
 	"name": "gatsby-plugin-browser-dependencies",
 	"description": "Excludes browser-only dependencies from your SSR builds in Gatsby.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
 	"license": "MIT",
 	"repository": {
