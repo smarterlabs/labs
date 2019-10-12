@@ -1,10 +1,10 @@
-const { SANITY_READ_TOKEN } = require(`utils/env`)
+const { SANITY_READ_TOKEN } = require(`@utils/env`)
 const proxy = require(`http-proxy-middleware`)
 const { parse: parseUrl } = require(`url`)
-const sanityToExcerpt = require(`utils/sanity-to-excerpt`)
+const sanityToExcerpt = require(`@utils/sanity-to-excerpt`)
 const { siteUrl } = require(`config`)
 const { redirects } = require(`./netlify-config`)
-const { title, description } = require(`utils/.cache/site-settings.json`)
+const { title, description } = require(`@utils/.cache/site-settings.json`)
 
 module.exports = {
 	siteMetadata: {
