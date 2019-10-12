@@ -2,7 +2,8 @@
 	"packages": [
 		"packages/*",
 		"packages/@app-boilerplate/*",
-		"packages/@smarterlabs/*"
+		"packages/@smarterlabs/*",
+		"packages/@utils/*"
 	],
 	"version": "independent",
 	"npmClient": "yarn",

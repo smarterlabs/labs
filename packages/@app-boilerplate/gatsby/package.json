@@ -1,5 +1,6 @@
 {
   "name": "@app-boilerplate/gatsby",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production npx gatsby build --verbose",

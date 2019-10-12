@@ -20,7 +20,7 @@
 		"serve": "npx lerna run serve",
 		"start": "yarn run dev",
 		"test": "jest",
-		"version": "npx lerna version"
+		"version": "npx lerna version --no-push"
 	},
 	"husky": {
 		"hooks": {
@@ -36,7 +36,8 @@
 	"workspaces": [
 		"packages/*",
 		"packages/@app-boilerplate/*",
-		"packages/@smarterlabs/*"
+		"packages/@smarterlabs/*",
+		"packages/@utils/*"
 	],
 	"devDependencies": {
 		"@testing-library/jest-dom": "^4.1.0",
