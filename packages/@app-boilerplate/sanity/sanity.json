@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "project": {
+    "name": "Application Boilerplate",
+    "basePath": "/admin"
+  },
+  "api": {
+    "projectId": "",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "logo"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    }
+  ]
+}

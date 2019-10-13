@@ -1,0 +1,9 @@
+{
+	"presets": [
+		"gatsby",
+		["@smarterlabs/babel-preset", {
+			"modules": "auto",
+			"targets": "> 0.25%, not dead"
+		}]
+	]
+}
