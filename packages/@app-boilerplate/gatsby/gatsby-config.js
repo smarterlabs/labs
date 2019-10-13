@@ -4,7 +4,7 @@ const { parse: parseUrl } = require(`url`)
 const sanityToExcerpt = require(`@utils/sanity-to-excerpt`)
 const { siteUrl } = require(`config`)
 const { redirects } = require(`./netlify-config`)
-const { title, description } = require(`@utils/.cache/site-settings.json`)
+const { siteSettings: { title, description } } = require(`@utils/sanity-data`)
 
 module.exports = {
 	siteMetadata: {
