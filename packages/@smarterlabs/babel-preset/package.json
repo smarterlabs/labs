@@ -1,7 +1,7 @@
 {
 	"name": "@smarterlabs/babel-preset",
 	"description": "A Babel preset for JavaScript projects.",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"main": "index.js",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
 	"license": "MIT",
