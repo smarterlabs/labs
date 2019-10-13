@@ -1,0 +1,14 @@
+{
+  "name": "@utils/sanity-data",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node fetch",
+    "dev": "node fetch"
+  },
+  "dependencies": {
+    "@sanity/client": "^0.142.0",
+    "fs-extra": "^8.1.0"
+  }
+}
