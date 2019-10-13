@@ -20,7 +20,7 @@
 		"serve": "npx lerna run serve",
 		"start": "yarn run dev",
 		"test": "jest",
-		"version": "npx lerna version --no-push"
+		"version": "npx lerna version --no-push --ignore-changes \"config/**/*\""
 	},
 	"husky": {
 		"hooks": {
