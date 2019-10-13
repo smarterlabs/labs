@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '@app/gatsby/src/img/logo.svg'
+import logo from '@app-boilerplate/gatsby/src/img/logo.svg'
 import styles from './logo.css'
 
 export default function Logo(){
