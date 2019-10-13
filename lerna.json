@@ -9,6 +9,7 @@
 	"npmClient": "yarn",
 	"useWorkspaces": true,
 	"ignoreChanges": [
-		"packages/config/**"
+		"packages/config/**",
+		"packages/@app-boilerplate/**"
 	]
 }
