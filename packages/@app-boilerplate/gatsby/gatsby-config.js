@@ -5,6 +5,7 @@ const sanityToExcerpt = require(`@utils/sanity-to-excerpt`)
 const { siteUrl } = require(`config`)
 const { redirects } = require(`./netlify-config`)
 const { siteSettings: { title, description } } = require(`@utils/sanity-data`)
+const { api: { projectId, dataset } } = require(`../sanity/sanity.json`)
 
 module.exports = {
 	siteMetadata: {
@@ -63,8 +64,8 @@ module.exports = {
 		{
 			resolve: `gatsby-source-sanity`,
 			options: {
-				projectId: `lfxwk0kx`,
-				dataset: `production`,
+				projectId,
+				dataset,
 				token: SANITY_READ_TOKEN,
 			},
 		},

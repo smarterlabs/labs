@@ -75,7 +75,7 @@ export default function ProductTemplate({
 }
 
 export const query = graphql`
-	query ProductTemplate($id: String!, $sku: String!) {
+	query ProductTemplate($id: String!) {
 		sanityProduct(
 			id: { eq: $id }
 		){
