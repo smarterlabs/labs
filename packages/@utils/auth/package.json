@@ -1,0 +1,14 @@
+{
+  "name": "@utils/auth",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "peerDependencies": {
+    "gatsby": "*",
+    "react": "*"
+  },
+  "dependencies": {
+    "auth0-js": "^9.11.3",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}

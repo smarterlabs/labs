@@ -9,7 +9,7 @@ import Layout from 'components/layouts/default'
 import TagList from 'components/blog/tag-list'
 import CommentForm from 'components/comment-form'
 import Comments from 'components/comments'
-import sanityToExcerpt from 'utils/sanity-to-excerpt'
+import sanityToExcerpt from '@utils/sanity-to-excerpt'
 import SanityBlock from 'components/sanity-block'
 
 export default function PostTemplate({

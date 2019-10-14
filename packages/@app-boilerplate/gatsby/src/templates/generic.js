@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from 'components/layouts/default'
-import sanityToExcerpt from 'utils/sanity-to-excerpt'
+import sanityToExcerpt from '@utils/sanity-to-excerpt'
 import SanityBlock from 'components/sanity-block'
 
 export default function GenericTemplate({

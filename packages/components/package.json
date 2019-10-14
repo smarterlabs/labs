@@ -1,0 +1,30 @@
+{
+  "name": "components",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@brainhubeu/react-carousel": "^1.10.17",
+    "@emotion/core": "^10.0.16",
+    "@material-ui/icons": "^4.4.1",
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/image-url": "^0.140.13",
+    "auth0-js": "^9.11.3",
+    "color": "^3.1.2",
+    "formik": "^1.5.8",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.24.0",
+    "react-google-invisible-recaptcha": "^0.2.11",
+    "react-gravatar": "^2.6.3",
+    "react-html-email": "^3.0.0",
+    "ultimate-pagination": "^1.0.0",
+    "yup": "^0.27.0"
+  },
+  "peerDependencies": {
+    "gatsby": "*",
+    "leaflet": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-helmet": "*",
+    "react-leaflet-markercluster": "*"
+  }
+}

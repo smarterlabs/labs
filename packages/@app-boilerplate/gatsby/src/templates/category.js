@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import Layout from 'components/layouts/default'
-import excerpt from 'utils/sanity-to-excerpt'
+import excerpt from '@utils/sanity-to-excerpt'
 
 export default function ProductCategoryTemplate({
 	data: {

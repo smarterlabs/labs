@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from 'components/layouts/default'
 import Carousel from 'components/photo-carousel'
-import sanityToExcerpt from 'utils/sanity-to-excerpt'
+import sanityToExcerpt from '@utils/sanity-to-excerpt'
 import SanityBlock from 'components/sanity-block'
 
 export default function ProductTemplate({
