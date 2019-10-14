@@ -25,7 +25,7 @@ module.exports = declare((api, options) => {
 	} = options
 
 	if (typeof modules !== `undefined` && typeof modules !== `boolean` && modules !== `auto`) {
-		throw new TypeError(`babel-preset-smarterlabs only accepts \`true\`, \`false\`, or \`"auto"\` as the value of the "modules" option`)
+		throw new TypeError(`@smarterlabs/babel-preset only accepts \`true\`, \`false\`, or \`"auto"\` as the value of the "modules" option`)
 	}
 
 	const debug = typeof options.debug === `boolean` ? options.debug : false

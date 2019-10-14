@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { WithAuth, useAuth } from 'utils/auth'
+import { WithAuth, useAuth } from '@utils/auth'
 
 function SessionCheck({ children }){
 	const { silentAuth } = useAuth()

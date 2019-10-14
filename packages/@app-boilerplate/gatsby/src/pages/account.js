@@ -8,7 +8,7 @@ import Error from 'components/error-message'
 import Success from 'components/success-message'
 import Loading from 'components/loading'
 import PasswordChange from 'components/password-change'
-import { useAuth } from 'utils/auth'
+import { useAuth } from '@utils/auth'
 
 export default function AccountPage(){
 	const {
