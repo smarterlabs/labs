@@ -36,7 +36,7 @@ export default function Header(){
 					<li><Link to='/blog'>Blog</Link></li>
 					<li><Link to='/about'>About</Link></li>
 					<li><Link to='/map'>Map</Link></li>
-					<li><Link to='/category/fruits'>Category</Link></li>
+					<li><Link to='/category/fruit'>Category</Link></li>
 					<li><Link to='/search'>Search</Link></li>
 					<li><Link to='/contact'>Contact</Link></li>
 					{!user && (
