@@ -1,0 +1,10 @@
+{
+	"presets": [
+		["@smarterlabs/babel-preset", {
+			"modules": "auto",
+			"targets": {
+				"node": "8.10"
+			}
+		}]
+	]
+}
