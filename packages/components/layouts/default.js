@@ -12,7 +12,7 @@ import {
 	secondaryFont,
 } from 'config/fonts'
 import linkMixin from '../mixins/link'
-import { siteSettings } from '@utils/sanity-data'
+import { siteSettings } from '@app-boilerplate/sanity-data'
 import './global.css'
 import 'typeface-open-sans'
 import 'typeface-oswald'
