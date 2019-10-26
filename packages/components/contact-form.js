@@ -16,7 +16,7 @@ export default function ContactForm(){
 			{loadingUser && <Loading />}
 			{!loadingUser && (
 				<Form
-					action='/.netlify/utils/contact'
+					action='/.netlify/functions/contact'
 					recaptcha={true}
 					initialValues={{
 						email: user.email || ``,

@@ -19,18 +19,24 @@ export default function CustomForm({
 	const [error, setError] = useState(false)
 	let recaptchaRef
 
+	console.log(`success`, success)
+
 	const onSubmit = async (values, { resetForm, setSubmitting }) => {
 		console.log(`onSubmit`)
 		setError(false)
 
 		try {
 			if (action) {
+				console.log(`action`, action)
 				const res = await fetch(action, {
 					method: `post`,
 					body: JSON.stringify(values),
 				})
+				console.log(`res`, res)
+				const body = await res.text()
+				console.log(`body`, body)
 				if (res.status === 200) {
-					setSuccess(!!success)
+					setSuccess(true)
 					resetForm()
 				}
 				else {
@@ -69,6 +75,9 @@ export default function CustomForm({
 			initialValues={initialValues}
 			validationSchema={validationSchema}
 			onSubmit={(values, fns) => {
+				console.log(`Formik onSubmit`)
+				console.log(`recaptcha`, recaptcha)
+				console.log(`values.recaptcha`, values.recaptcha)
 				if (recaptcha && !values.recaptcha) {
 					fns.setSubmitting(false)
 					recaptchaRef.execute()
