@@ -4,7 +4,7 @@ const isImage = require(`../utils/isImage`)
 const getBasicImageProps = require(`../utils/getBasicImageProps`)
 const createUrl = require(`../utils/createUrl`)
 const {
-	CONTENTFUL_IMAGE_MAX_SIZE,
+	CLOUDINARY_IMAGE_MAX_SIZE,
 } = require(`../static/constants`)
 
 const resolveFixed = (image, options) => {
@@ -49,8 +49,8 @@ const resolveFixed = (image, options) => {
 	const filteredSizes = fixedSizes.filter(size => {
 		const calculatedHeight = Math.round(size / desiredAspectRatio)
 		return (
-			size <= CONTENTFUL_IMAGE_MAX_SIZE &&
-      calculatedHeight <= CONTENTFUL_IMAGE_MAX_SIZE &&
+			size <= CLOUDINARY_IMAGE_MAX_SIZE &&
+      calculatedHeight <= CLOUDINARY_IMAGE_MAX_SIZE &&
       size <= width
 		)
 	})
@@ -151,12 +151,12 @@ const resolveFluid = (image, options) => {
 	fluidSizes.push(options.maxWidth * 3)
 	fluidSizes = fluidSizes.map(Math.round)
 
-	// Filter out sizes larger than the image's maxWidth and the contentful image's max size.
+	// Filter out sizes larger than the image's maxWidth and the CLOUDINARY image's max size.
 	const filteredSizes = fluidSizes.filter(size => {
 		const calculatedHeight = Math.round(size / desiredAspectRatio)
 		return (
-			size <= CONTENTFUL_IMAGE_MAX_SIZE &&
-      calculatedHeight <= CONTENTFUL_IMAGE_MAX_SIZE &&
+			size <= CLOUDINARY_IMAGE_MAX_SIZE &&
+      calculatedHeight <= CLOUDINARY_IMAGE_MAX_SIZE &&
       size <= width
 		)
 	})
@@ -165,8 +165,8 @@ const resolveFluid = (image, options) => {
 	// is available for small images.
 	if (
 		!filteredSizes.includes(parseInt(width)) &&
-    parseInt(width) < CONTENTFUL_IMAGE_MAX_SIZE &&
-    Math.round(width / desiredAspectRatio) < CONTENTFUL_IMAGE_MAX_SIZE
+    parseInt(width) < CLOUDINARY_IMAGE_MAX_SIZE &&
+    Math.round(width / desiredAspectRatio) < CLOUDINARY_IMAGE_MAX_SIZE
 	) {
 		filteredSizes.push(width)
 	}
