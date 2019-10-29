@@ -1,7 +1,8 @@
 const cloudinary = require(`cloudinary`)
 const camelcase = require(`camelcase`)
 
-const cloudApi = require(`../utils/cloud-api`)
+const cloudApi = require(`../utils/cloudApi`)
+const logger = require(`../utils/logger`)
 
 module.exports = async ({
 	actions,
@@ -35,6 +36,7 @@ module.exports = async ({
 			for(let key in cloudResults[i]){
 				nodeContent[camelcase(key)] = cloudResults[i][key]
 			}
+			nodeContent.cloudName = cloudName
 
 			const nodeMeta = {
 				id: createNodeId(`cloudinary-${nodeContent.publicId}`),
@@ -52,6 +54,7 @@ module.exports = async ({
 			}
 			createNode(node)
 		}
+		logger(`Nodes Created`, `info`)
 	} catch(e){
 		console.log(`Cloudinary Error: `, e)
 	}
