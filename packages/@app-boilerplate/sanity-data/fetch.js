@@ -4,6 +4,7 @@ const { outputJson } = require(`fs-extra`)
 const { SANITY_READ_TOKEN } = require(`@utils/env`)
 const { api: { projectId, dataset } } = require(`@app-boilerplate/sanity/sanity.json`)
 
+
 if (!SANITY_READ_TOKEN){
 	console.error(`process.env.SANITY_READ_TOKEN not found`)
 	process.exit(1)

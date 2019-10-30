@@ -8,7 +8,7 @@ export default function BackendEmail({ title, children }) {
 		<EmailTemplate title={title}>
 			<div css={styles.wrapper}>
 				<p css={styles.img}>
-					<img src='/backend-logo.png' />
+					<img src='https://res.cloudinary.com/smarterlabs/image/upload/w_300/logo_xr0jhl.png' />
 				</p>
 				{children}
 			</div>

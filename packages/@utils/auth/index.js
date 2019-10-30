@@ -8,6 +8,7 @@ import handleAuthentication from './handle-authentication'
 import silentAuth from './silent-auth'
 import setMetadata from './set-metadata'
 import patchUser from './patch-user'
+import isAuthenticated from './is-authenticated'
 
 const initialState = {
 	user: false,
@@ -37,6 +38,7 @@ export function WithAuth({ children }) {
 			...state,
 			navigateToPrevious,
 			login,
+			isAuthenticated,
 			logout: logout.bind(null, setState),
 			clearUser: clearUser.bind(null, setState),
 			changePassword: changePassword.bind(null, email),
