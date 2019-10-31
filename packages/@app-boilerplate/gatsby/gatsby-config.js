@@ -1,10 +1,15 @@
-const { SANITY_READ_TOKEN } = require(`@utils/env`)
+const {
+	SANITY_READ_TOKEN,
+	CLOUDINARY_API_KEY,
+	CLOUDINARY_API_SECRET,
+	CLOUDINARY_NAME,
+} = require(`@utils/env`)
 const proxy = require(`http-proxy-middleware`)
 const { parse: parseUrl } = require(`url`)
 const sanityToExcerpt = require(`@utils/sanity-to-excerpt`)
 const { siteUrl } = require(`config`)
 const { redirects } = require(`./netlify-config`)
-const { siteSettings: { title, description } } = require(`@app-boilerplate/sanity-data`)
+const { siteSettings: { title, description } } = require(`../sanity-data`)
 const { api: { projectId, dataset } } = require(`../sanity/sanity.json`)
 
 module.exports = {
@@ -22,6 +27,14 @@ module.exports = {
 		`generic-pages`,
 		`products`,
 		`accounts`,
+		{
+			resolve: `gatsby-plugin-cloudinary`,
+			options: {
+				apiKey: CLOUDINARY_API_KEY,
+				apiSecret: CLOUDINARY_API_SECRET,
+				cloudName: CLOUDINARY_NAME,
+			},
+		},
 		// {
 		// 	resolve: `gatsby-plugin-browser-dependencies`,
 		// 	option: {
