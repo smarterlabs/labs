@@ -4,7 +4,7 @@ import Layout from 'components/layouts/default'
 import Map from 'components/locations-map'
 
 export default function MapPage(props) {
-	const locations = props.data ?.allSanityLocation?.edges.map(({
+	const locations = props.data?.allSanityLocation?.edges.map(({
 		node: {
 			location: {
 				lat,
@@ -25,6 +25,7 @@ export default function MapPage(props) {
 		state,
 		zip,
 	})) || []
+
 	return (
 		<Layout title='Map'>
 			<h1>Map</h1>

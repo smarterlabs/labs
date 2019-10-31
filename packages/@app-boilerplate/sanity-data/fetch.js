@@ -7,7 +7,8 @@ const { api: { projectId, dataset } } = require(`@app-boilerplate/sanity/sanity.
 
 if (!SANITY_READ_TOKEN){
 	console.error(`process.env.SANITY_READ_TOKEN not found`)
-	process.exit(1)
+	console.warn(`You will need a SANITY_READ_TOKEN in order to obtain data from the cms.`)
+	// process.exit(1)
 }
 
 const cwd = process.cwd()
@@ -23,12 +24,12 @@ const siteSettingsPath = join(cwd, `dist/site-settings.json`)
 async function createProductJson() {
 	const data = await client.fetch(`*[_type == "product"] {defaultProductVariant}`)
 	const productIds = data.map(({ defaultProductVariant: { sku } }) => sku)
-	await outputJson(productIdsPath, productIds)
+	await outputJson(productIdsPath, productIds || [])
 }
 
 async function createSiteSettings() {
 	const [data] = await client.fetch(`*[_type == "siteSettings"] {title, description, keywords}`)
-	await outputJson(siteSettingsPath, data)
+	await outputJson(siteSettingsPath, data || {})
 }
 
 try {

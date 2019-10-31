@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "node fetch",
-    "dev": "node fetch"
+		"dev": "node fetch",
+		"clean": "rm -rf dist"
   },
   "dependencies": {
     "@sanity/client": "^0.142.0",
