@@ -7,7 +7,8 @@ const { api: { projectId, dataset } } = require(`@app-boilerplate/sanity/sanity.
 
 if (!SANITY_READ_TOKEN){
 	console.error(`process.env.SANITY_READ_TOKEN not found`)
-	process.exit(1)
+	console.warn(`You will need a SANITY_READ_TOKEN in order to obtain data from the cms.`)
+	// process.exit(1)
 }
 
 const cwd = process.cwd()

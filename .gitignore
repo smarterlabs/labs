@@ -12,6 +12,7 @@ node_modules
 # Development/Environment
 .env
 .env.*
+test-env.txt
 !.env.example
 dist
 dist-*
