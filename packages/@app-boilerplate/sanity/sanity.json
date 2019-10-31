@@ -5,8 +5,8 @@
     "basePath": "/admin"
   },
   "api": {
-    "projectId": "8sdpe8r6",
-    "dataset": "production"
+    "projectId": "r2c3enn2",
+    "dataset": "demo-db"
   },
   "plugins": [
     "@sanity/base",

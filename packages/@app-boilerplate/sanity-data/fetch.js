@@ -23,12 +23,12 @@ const siteSettingsPath = join(cwd, `dist/site-settings.json`)
 async function createProductJson() {
 	const data = await client.fetch(`*[_type == "product"] {defaultProductVariant}`)
 	const productIds = data.map(({ defaultProductVariant: { sku } }) => sku)
-	await outputJson(productIdsPath, productIds)
+	await outputJson(productIdsPath, productIds || [])
 }
 
 async function createSiteSettings() {
 	const [data] = await client.fetch(`*[_type == "siteSettings"] {title, description, keywords}`)
-	await outputJson(siteSettingsPath, data)
+	await outputJson(siteSettingsPath, data || {})
 }
 
 try {
