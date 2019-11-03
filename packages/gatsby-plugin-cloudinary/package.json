@@ -1,0 +1,34 @@
+{
+	"name": "gatsby-plugin-cloudinary",
+	"description": "Transform Cloudinary images for use with gatsby-image",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smarterlabs/labs.git",
+		"directory": "packages/gatsby-plugin-cloudinary"
+	},
+	"homepage": "https://github.com/smarterlabs/labs/tree/master/packages/gatsby-plugin-cloudinary#readme",
+	"bugs": {
+		"url": "https://github.com/smarterlabs/labs/issues"
+	},
+	"main": "index.js",
+	"keywords": [
+		"gatsby",
+		"gatsby-plugin",
+		"cloudinary",
+		"source",
+		"image"
+	],
+	"dependencies": {
+		"axios": "^0.19.0",
+		"base64-img": "^1.0.4",
+		"camelcase": "^5.3.1",
+		"cloudinary": "^1.16.0",
+		"colors": "^1.4.0",
+		"fs-extra": "^8.1.0",
+		"gatsby": "^2.17.7",
+		"gatsby-plugin-sharp": "^2.2.36",
+		"lodash": "^4.17.15"
+	}
+}

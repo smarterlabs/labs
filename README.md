@@ -21,6 +21,21 @@ Add environment variables to a `./.env` file in the root of your project.
 
 It's also recommended to go through and change any settings you might need in the `packages/config` files.
 
+## Netlify Setup
+
+```bash
+cd packages/@app-boilerplate/gatsby
+rm -rf .netlify
+
+# Skip these two lines if there's already a public folder
+mkdir public
+touch public/index.html
+
+netlify deploy
+```
+
+Follow the instructions in the terminal to create a new Netlify site. When it asks what directory to deploy, input `public`. If you want to deploy to Netlify via CI, you'll need to add your Netlify auth token (`NETLIFY_AUTH_TOKEN`) to the environment variables.
+
 ## Setup for an existing project
 
 ```bash
