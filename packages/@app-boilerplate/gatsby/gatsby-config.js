@@ -1,8 +1,8 @@
 const {
 	SANITY_READ_TOKEN,
-	CLOUDINARY_API_KEY,
-	CLOUDINARY_API_SECRET,
-	CLOUDINARY_NAME,
+	// CLOUDINARY_API_KEY,
+	// CLOUDINARY_API_SECRET,
+	// CLOUDINARY_NAME,
 } = require(`@utils/env`)
 const proxy = require(`http-proxy-middleware`)
 const { parse: parseUrl } = require(`url`)
@@ -27,14 +27,14 @@ module.exports = {
 		`generic-pages`,
 		`products`,
 		`accounts`,
-		{
-			resolve: `gatsby-plugin-cloudinary`,
-			options: {
-				apiKey: CLOUDINARY_API_KEY,
-				apiSecret: CLOUDINARY_API_SECRET,
-				cloudName: CLOUDINARY_NAME,
-			},
-		},
+		// {
+		// 	resolve: `gatsby-plugin-cloudinary`,
+		// 	options: {
+		// 		apiKey: CLOUDINARY_API_KEY,
+		// 		apiSecret: CLOUDINARY_API_SECRET,
+		// 		cloudName: CLOUDINARY_NAME,
+		// 	},
+		// },
 		// {
 		// 	resolve: `gatsby-plugin-browser-dependencies`,
 		// 	option: {
@@ -68,10 +68,23 @@ module.exports = {
 		},
 		`gatsby-plugin-netlify`,
 		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [],
+			},
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				path: `${__dirname}/static`,
 				name: `images`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/src/markdown`,
+				name: `markdown`,
 			},
 		},
 		{

@@ -31,7 +31,7 @@ export default function Layout({
 		<>
 			<Helmet>
 				<html lang='en' />
-				<title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
+				<title>{title ? `${title} | ${siteTitle || `example.com`}` : siteTitle}</title>
 				<meta name='description' content={description || siteDescription} />
 				<meta property='og:title' content={title} />
 				<meta property='og:site_name' content={siteTitle} />
