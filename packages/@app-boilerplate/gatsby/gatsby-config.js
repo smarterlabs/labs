@@ -68,10 +68,23 @@ module.exports = {
 		},
 		`gatsby-plugin-netlify`,
 		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [],
+			},
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				path: `${__dirname}/static`,
 				name: `images`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/src/markdown`,
+				name: `markdown`,
 			},
 		},
 		{
