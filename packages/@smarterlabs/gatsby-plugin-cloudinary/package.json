@@ -1,5 +1,5 @@
 {
-	"name": "gatsby-plugin-cloudinary",
+	"name": "@smarterlabs/gatsby-source-cloudinary",
 	"description": "Transform Cloudinary images for use with gatsby-image",
 	"version": "0.0.0",
 	"license": "MIT",

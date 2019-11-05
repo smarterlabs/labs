@@ -28,7 +28,7 @@ module.exports = {
 		`products`,
 		`accounts`,
 		{
-			resolve: `gatsby-plugin-cloudinary`,
+			resolve: `@smarterlabs/gatsby-source-cloudinary`,
 			options: {
 				apiKey: CLOUDINARY_API_KEY,
 				apiSecret: CLOUDINARY_API_SECRET,
