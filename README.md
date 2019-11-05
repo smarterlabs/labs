@@ -36,6 +36,20 @@ netlify deploy
 
 Follow the instructions in the terminal to create a new Netlify site. When it asks what directory to deploy, input `public`. If you want to deploy to Netlify via CI, you'll need to add your Netlify auth token (`NETLIFY_AUTH_TOKEN`) to the environment variables.
 
+## Auth0 Setup
+
+If you need authentication, you'll need to create a new application in the [Auth0 dashboard](https://manage.auth0.com/). Set the application type to "Regular Web Application" when you create it.
+
+Once created, go into the settings of the application and change the following settings. Make sure to replace any of the ".com" URLs with your own.
+
+Name | Value
+--- | ---
+Allowed Callback URLs | `https://localhost:8000/auth0-callback, http://localhost:8000/auth0-callback, http://localhost:8888/auth0-callback, https://labs-boilerplate.netlify.com/auth0-callback`
+Allowed Web Origins | `https://localhost:8000, http://localhost:8000, http://localhost:8888, https://labs-boilerplate.netlify.com`
+Allowed Logout URLs | `https://localhost:8000/auth0-logout, http://localhost:8000/auth0-logout, http://localhost:8888/auth0-logout, https://labs-boilerplate.netlify.com/auth0-logout`
+
+Then copy any environment variables you may need to Circle CI and your local `.env` file. To see the key names, check the `.env.example` file.
+
 ## Setup for an existing project
 
 ```bash
