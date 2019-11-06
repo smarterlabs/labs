@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npx sanity build",
     "postbuild": "node utils/post-build",
-    "deploy:production": "npx sanity graphql deploy --no-playground && sanity deploy",
+    "deploy:production": "npx sanity graphql deploy --no-playground && npx sanity deploy",
     "dev": "npx sanity start",
     "test": "npx sanity check",
     "open": "npx open-cli https://project-boilerplate.sanity.studio/"
