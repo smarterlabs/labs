@@ -1,9 +1,10 @@
 import verify from 'auth0-verify'
 import fetch from 'isomorphic-fetch'
-import {
+
+const {
 	GATSBY_AUTH0_DOMAIN,
 	GATSBY_AUTH0_CLIENTID,
-} from '@utils/env'
+} = process.env
 
 export async function handler(event) {
 	const {

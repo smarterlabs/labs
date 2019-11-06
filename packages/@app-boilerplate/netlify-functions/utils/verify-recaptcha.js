@@ -1,7 +1,7 @@
 import Recaptcha from 'recaptcha-verify'
-import { SITE_RECAPTCHA_SECRET } from '@utils/env'
+
 const recaptcha = new Recaptcha({
-	secret: SITE_RECAPTCHA_SECRET,
+	secret: process.env.SITE_RECAPTCHA_SECRET,
 	verbose: true,
 })
 

@@ -1,11 +1,8 @@
 import Mailgun from 'mailgun-js'
-import {
-	MAILGUN_API_KEY,
-	MAILGUN_DOMAIN,
-} from '@utils/env'
+
 const mailgun = Mailgun({
-	apiKey: MAILGUN_API_KEY,
-	domain: MAILGUN_DOMAIN,
+	apiKey: process.env.MAILGUN_API_KEY,
+	domain: process.env.MAILGUN_DOMAIN,
 })
 
 export default async function sendEmail(data) {

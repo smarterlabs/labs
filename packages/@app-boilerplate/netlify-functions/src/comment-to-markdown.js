@@ -3,12 +3,8 @@ import { stringify } from 'yaml'
 import md5 from 'md5'
 import Recaptcha from 'recaptcha-verify'
 import { gitHubRepo, gitHubOwner } from '../../config'
-import {
-	SITE_RECAPTCHA_SECRET,
-	GITHUB_API_TOKEN,
-} from '@utils/env'
 const recaptcha = new Recaptcha({
-	secret: SITE_RECAPTCHA_SECRET,
+	secret: process.env.SITE_RECAPTCHA_SECRET,
 	verbose: true,
 })
 
@@ -82,7 +78,7 @@ export async function handler({ body }){
 		const markdownData = `---\n${stringify(data)}---\n\n${comment}`
 
 		const octokit = new Octokit({
-			auth: `token ${GITHUB_API_TOKEN}`,
+			auth: `token ${process.env.GITHUB_API_TOKEN}`,
 		})
 		console.log(`Octokit authenticated...`)
 		await octokit.repos.createOrUpdateFile({

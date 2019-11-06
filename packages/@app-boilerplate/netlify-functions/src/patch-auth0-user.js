@@ -1,11 +1,12 @@
 import { promisify } from 'util'
 import verify from 'auth0-verify'
 import { ManagementClient } from 'auth0'
-import {
+
+const {
 	GATSBY_AUTH0_DOMAIN,
 	GATSBY_AUTH0_CLIENTID,
 	AUTH0_CLIENTSECRET,
-} from '@utils/env'
+} = process.env
 
 const allowedProperties = [
 	`email`,
