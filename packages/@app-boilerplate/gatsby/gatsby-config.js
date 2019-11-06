@@ -36,7 +36,7 @@ module.exports = {
 			},
 		},
 		// {
-		// 	resolve: `gatsby-plugin-browser-dependencies`,
+		// 	resolve: `@smarterlabs/gatsby-plugin-browser-dependencies`,
 		// 	option: {
 		// 		dependencies: [
 		// 			`auth-js`,
