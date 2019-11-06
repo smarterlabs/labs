@@ -13,6 +13,8 @@
 			"ignoreChanges": [
 				"packages/config/**",
 				"packages/components/**",
+				"**/packages/components/**",
+				"**/packages/components/**/*",
 				"packages/@app-boilerplate/**",
 				"packages/@utils/**",
 				"**/*"
