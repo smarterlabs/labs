@@ -1,7 +1,7 @@
 const { join } = require(`path`)
 const sanityClient = require(`@sanity/client`)
 const { outputJson } = require(`fs-extra`)
-const { api: { projectId, dataset } } = require(`@app-boilerplate/sanity/sanity.json`)
+const { api: { projectId, dataset } } = require(`../sanity/sanity.json`)
 
 const { SANITY_READ_TOKEN } = process.env
 
