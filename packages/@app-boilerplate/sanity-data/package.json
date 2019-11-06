@@ -3,8 +3,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "node fetch",
-		"dev": "node fetch",
+    "build": "npx dotenv -e ../../../.env -- node fetch",
+		"dev": "npx dotenv -e ../../../.env -- node fetch",
 		"clean": "rm -rf dist"
   },
   "dependencies": {
