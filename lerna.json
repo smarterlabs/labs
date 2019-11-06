@@ -9,15 +9,12 @@
 	"npmClient": "yarn",
 	"useWorkspaces": true,
 	"command": {
-		"version": {
+		"publish": {
 			"ignoreChanges": [
 				"packages/config/**",
 				"packages/components/**",
-				"**/packages/components/**",
-				"**/packages/components/**/*",
 				"packages/@app-boilerplate/**",
-				"packages/@utils/**",
-				"**/*"
+				"packages/@utils/**"
 			]
 		}
 	}
