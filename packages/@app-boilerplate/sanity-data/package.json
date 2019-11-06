@@ -1,6 +1,7 @@
 {
   "name": "@app-boilerplate/sanity-data",
   "private": true,
+  "version": "0.0.0",
   "main": "index.js",
   "scripts": {
     "build": "npx dotenv -e ../../../.env -- node fetch",
