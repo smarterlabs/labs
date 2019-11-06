@@ -3,7 +3,7 @@ const {
 	CLOUDINARY_API_KEY,
 	CLOUDINARY_API_SECRET,
 	CLOUDINARY_NAME,
-} = require(`@utils/env`)
+} = process.env
 const proxy = require(`http-proxy-middleware`)
 const { parse: parseUrl } = require(`url`)
 const sanityToExcerpt = require(`@utils/sanity-to-excerpt`)
@@ -185,7 +185,7 @@ module.exports = {
 										guid: `${siteUrl}/${slug}`,
 										custom_elements: [{ 'content:encoded': `${sanityToExcerpt(_rawBody, 15)}...` }],
 									}
-								}
+								},
 							)
 						},
 						output: `/rss.xml`,
@@ -232,7 +232,7 @@ module.exports = {
 									path: current,
 								},
 							}
-						}
+						},
 					)
 				},
 			},

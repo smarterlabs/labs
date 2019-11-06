@@ -1,9 +1,8 @@
 const { resolve } = require(`path`)
-const { SANITY_READ_TOKEN } = require(`@utils/env`)
 
 const postTemplate = resolve(`src/templates/generic.js`)
 
-const sanityKeyExist = !!SANITY_READ_TOKEN
+const sanityKeyExist = !!process.env.SANITY_READ_TOKEN
 exports.createPages = async function({ actions, graphql }){
 	const { createPage } = actions
 
