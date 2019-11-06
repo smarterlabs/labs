@@ -1,6 +1,5 @@
 {
   "name": "components",
-  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.10.17",
