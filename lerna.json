@@ -10,6 +10,7 @@
 	"useWorkspaces": true,
 	"ignoreChanges": [
 		"packages/config/**",
+		"packages/components/**",
 		"packages/@app-boilerplate/**",
 		"packages/@utils/**"
 	]
