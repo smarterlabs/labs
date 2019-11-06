@@ -14,9 +14,12 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-v1-{{ checksum "yarn.lock" }}
+      # - run:
+      #     name: Install Dependencies
+      #     command: yarn install --frozen-lockfile
       - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
+          name: Bootstrap
+          command: yarn run bootstrap
       - run:
           name: Install Sanity CLI
           command: sudo npm install -g --silent @sanity/cli
