@@ -1,7 +1,6 @@
 {
   "name": "@app-boilerplate/sanity",
   "private": true,
-  "version": "1.0.0",
   "description": "",
   "main": "package.json",
   "author": "Kennedy Rose <kennedyianrose@gmail.com>",

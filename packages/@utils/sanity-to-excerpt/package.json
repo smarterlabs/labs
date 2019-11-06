@@ -1,6 +1,5 @@
 {
   "name": "@utils/sanity-to-excerpt",
-  "version": "0.0.0",
   "private": true,
   "main": "index.js",
   "scripts": {},

@@ -1,6 +1,5 @@
 {
 	"name": "@app-boilerplate/netlify-functions",
-	"version": "0.0.0",
 	"private": true,
 	"scripts": {
 		"build": "dotenv -e ../../../.env netlify-lambda build src --config webpack-config.js",
