@@ -1,3 +1,4 @@
 {
-	"name": "schema-snapshot"
+	"name": "schema-snapshot",
+	"main": "index.js"
 }

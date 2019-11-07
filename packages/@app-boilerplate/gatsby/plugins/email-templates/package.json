@@ -1,3 +1,4 @@
 {
-	"name": "email-templates"
+	"name": "email-templates",
+	"main": "index.js"
 }

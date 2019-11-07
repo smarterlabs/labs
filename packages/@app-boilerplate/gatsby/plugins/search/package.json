@@ -1,3 +1,4 @@
 {
-	"name": "search"
+	"name": "search",
+	"main": "index.js"
 }
