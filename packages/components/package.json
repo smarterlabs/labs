@@ -1,6 +1,7 @@
 {
   "name": "components",
   "private": true,
+  "version": "0.0.0",
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.10.17",
     "@emotion/core": "^10.0.16",
