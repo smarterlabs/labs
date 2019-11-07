@@ -13,7 +13,7 @@ jobs:
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
-            - yarn-packages-v2-{{ checksum "yarn.lock" }}
+            - yarn-packages-v3-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
@@ -25,7 +25,7 @@ jobs:
           command: sudo npm install -g --silent @sanity/cli
       - save_cache:
           name: Save Yarn Package Cache
-          key: yarn-packages-v2-{{ checksum "yarn.lock" }}
+          key: yarn-packages-v3-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache
       - run:
