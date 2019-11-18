@@ -20,7 +20,7 @@
 		"netlify": "npx open-cli https://app.netlify.com/sites/labs-boilerplate/deploys",
 		"open": "npx lerna run open",
 		"patch": "npx lerna run patch",
-		"publish": "npx lerna publish from-package",
+		"publish": "npx lerna publish from-package -y",
 		"serve": "npx lerna run serve",
 		"start": "yarn run dev",
 		"test": "jest",
