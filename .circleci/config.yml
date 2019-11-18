@@ -52,7 +52,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/repo/.npmrc
       - run:
           name: Deploy Packages to npm
-          command: npx lerna publish from-package -y
+          command: yarn run publish
   deploy-staging:
     <<: *defaults
     steps:

@@ -5,6 +5,9 @@
 	"main": "index.js",
 	"author": "Kennedy Rose <kennedyianrose@gmail.com>",
 	"license": "MIT",
+	"scripts": {
+		"publish": "npm publish"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/smarterlabs/labs.git",

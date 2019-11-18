@@ -3,6 +3,9 @@
 	"description": "Transform Cloudinary images for use with gatsby-image",
 	"version": "1.0.0",
 	"license": "MIT",
+	"scripts": {
+		"publish": "npm publish"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/smarterlabs/labs.git",
