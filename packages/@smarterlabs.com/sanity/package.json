@@ -7,8 +7,12 @@
   "author": "Kennedy Rose <kennedyianrose@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
+    "build": "sanity install && sanity build",
+    "postbuild": "node utils/post-build",
+    "deploy:production": "sanity graphql deploy --no-playground && sanity deploy",
     "dev": "sanity start",
-    "test": "sanity check"
+    "test": "sanity check",
+    "open": "open-cli https://smarterlabscom.sanity.studio/"
   },
   "keywords": [
     "sanity"

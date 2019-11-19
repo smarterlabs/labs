@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "smarterlabs.com"
+    "name": "smarterlabs.com",
+    "basePath": "/admin"
   },
   "api": {
     "projectId": "vl5kqwld",

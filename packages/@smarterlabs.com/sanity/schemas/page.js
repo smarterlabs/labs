@@ -1,12 +1,12 @@
-import { FaPen } from 'react-icons/fa'
+import { FaFile } from 'react-icons/fa'
 import slugify from '../utils/slugify'
 import isUnique from '../utils/is-unique'
 
 export default {
-	name: `post`,
-	title: `Post`,
+	name: `page`,
+	title: `Page`,
 	type: `document`,
-	icon: FaPen,
+	icon: FaFile,
 	fields: [
 		{
 			name: `title`,
@@ -14,31 +14,14 @@ export default {
 			type: `string`,
 		},
 		{
-			name: `date`,
-			title: `Date`,
-			type: `datetime`,
-			calendarTodayLabel: `Today`,
-		},
-		{
 			name: `slug`,
 			title: `URL Path`,
 			type: `slug`,
 			options: {
-				source: ({ title }) => `post/${title}`,
+				source: `title`,
 				isUnique,
 				slugify,
 			},
-		},
-		{
-			name: `tags`,
-			title: `Tags`,
-			type: `array`,
-			of: [{type: `string`}],
-		},
-		{
-			name: `image`,
-			title: `Image`,
-			type: `captionedImage`,
 		},
 		{
 			name: `body`,
