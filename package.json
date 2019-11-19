@@ -11,7 +11,9 @@
 		"deploy": "npx lerna run deploy --stream --no-sort --concurrency 999",
 		"deploy:production": "npx lerna run deploy:production --stream --no-sort --concurrency 999",
 		"deploy:staging": "npx lerna run deploy:staging --stream --no-sort --concurrency 999",
-		"dev": "npx lerna run dev --stream --no-sort --concurrency 999",
+		"dev": "yarn run dev:site",
+		"dev:all": "npx lerna run dev --stream --no-sort --concurrency 999",
+		"dev:site": "npx lerna run dev --stream --no-sort --concurrency 999 --scope @smarterlabs.com/*",
 		"develop": "yarn run dev",
 		"github": "npx open-cli https://github.com/smarterlabs/labs",
 		"issue": "npx open-cli https://github.com/smarterlabs/labs/issues/new",
@@ -41,6 +43,7 @@
 		"packages/*",
 		"packages/@app-boilerplate/*",
 		"packages/@smarterlabs/*",
+		"packages/@smarterlabs.com/*",
 		"packages/@utils/*"
 	],
 	"devDependencies": {

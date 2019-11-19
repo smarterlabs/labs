@@ -3,6 +3,7 @@
 		"packages/*",
 		"packages/@app-boilerplate/*",
 		"packages/@smarterlabs/*",
+		"packages/@smarterlabs.com/*",
 		"packages/@utils/*"
 	],
 	"version": "independent",
@@ -14,6 +15,7 @@
 				"packages/config/**",
 				"packages/components/**",
 				"packages/@app-boilerplate/**",
+				"packages/@smarterlabs.com/**",
 				"packages/@utils/**"
 			]
 		}
