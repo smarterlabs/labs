@@ -12,6 +12,8 @@ import siteSettings from './site-settings'
 import blockContent from './block-content'
 import captionedImage from './captioned-image'
 import widget from './widget'
+import person from './person'
+import work from './work'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -23,6 +25,8 @@ export default createSchema({
 		// The following are document types which will appear
 		// in the studio.
 		page,
+		work,
+		person,
 		post,
 		comment,
 		siteSettings,

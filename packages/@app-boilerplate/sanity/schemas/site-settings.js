@@ -33,9 +33,19 @@ export default {
 			type: `text`,
 		},
 		{
+			name: `phone`,
+			title: `Phone Number`,
+			type: `string`,
+		},
+		{
 			name: `email`,
 			title: `Contact Email`,
 			type: `string`,
+		},
+		{
+			name: `icon`,
+			title: `Icon`,
+			type: `image`,
 		},
 	],
 }
