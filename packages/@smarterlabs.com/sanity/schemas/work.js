@@ -43,7 +43,7 @@ export default {
 			title: `Contributors`,
 			name: `contributors`,
 			type: `array`,
-			of: [{ type: `reference`, to: { type: `category` } }],
+			of: [{ type: `reference`, to: { type: `person` } }],
 		},
 		{
 			name: `tags`,
