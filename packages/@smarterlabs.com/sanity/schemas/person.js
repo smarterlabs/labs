@@ -52,7 +52,7 @@ export default {
 
 	preview: {
 		select: {
-			title: `title`,
+			title: `name`,
 		},
 	},
 }
