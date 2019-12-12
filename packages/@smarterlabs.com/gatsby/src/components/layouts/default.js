@@ -1,8 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { Helmet } from 'react-helmet'
-import Header from '../header'
-import Footer from '../footer'
+import Navigation, { navBarWidth } from '../navigation'
 import {
 	white,
 	primaryColor,
@@ -37,11 +36,10 @@ export default function Layout({
 				<meta property='og:site_name' content={siteTitle} />
 			</Helmet>
 			<div css={styles.layout}>
-				<Header />
+				<Navigation />
 				<div css={styles.content}>
 					<main>{children}</main>
 				</div>
-				<Footer />
 			</div>
 		</>
 	)
@@ -49,6 +47,7 @@ export default function Layout({
 
 const styles = {
 	layout: css`
+		padding-left: ${navBarWidth}px;
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;

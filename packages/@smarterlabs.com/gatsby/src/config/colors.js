@@ -1,7 +1,7 @@
 const color = require(`color`)
 
-const primaryColor = `#2152a0`
-const secondaryColor = `#333`
+const primaryColor = `#3d1283`
+const secondaryColor = `#00ff62`
 const errorColor = `#f44336`
 const successColor = `#00dd00`
 
