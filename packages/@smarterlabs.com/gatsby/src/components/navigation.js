@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import Link from 'gatsby-link'
+import Tagline from './tagline'
 import logo from '../img/logo.svg'
 import { primaryColor, secondaryColor } from '../config/colors'
+import { secondaryFont } from '../config/fonts'
 
+export const navBarWidth = 60
+const drawerWidth = 300
+const logoSize = 200
+const zIndex = 900
+const animationDuration = `.3s`
 const navOpenTimeout = 200
 
 export default function Header(){
@@ -26,6 +33,7 @@ export default function Header(){
 				onClick={() => toggleNav(false)}
 			/>
 			<div css={[styles.drawer, open && styles.activeDrawer]}>
+				<Tagline />
 				<ul>
 					<li>
 						<Link to='/design'>Design</Link>
@@ -51,8 +59,10 @@ export default function Header(){
 				</ul>
 			</div>
 			<div css={styles.bar} onMouseEnter={() => toggleNav(true, true)}>
-				<div css={styles.logo}>
-					<img src={logo} />
+				<div css={styles.logoContainer}>
+					<div css={styles.logo}>
+						<img src={logo} />
+					</div>
 				</div>
 				<button
 					onClick={() => toggleNav()}
@@ -64,12 +74,6 @@ export default function Header(){
 		</nav>
 	)
 }
-
-export const navBarWidth = 60
-const drawerWidth = 200
-const logoSize = 200
-const zIndex = 900
-const animationDuration = `.3s`
 
 const styles = {
 	backdrop: css`
@@ -94,10 +98,25 @@ const styles = {
 		transition: transform ${animationDuration};
 		background-color: #362284;
 		background-image: linear-gradient(19deg, #362284 0%, #00b78d 100%);
+		padding: 25px;
 		position: fixed;
 		top: 0;
 		bottom: 0;
 		z-index: ${zIndex + 1};
+		a{
+			color: #fff;
+			display: block;
+			:hover, :active{
+				color: ${primaryColor};
+				text-decoration: none;
+			}
+		}
+		ul{
+			padding: 0;
+		}
+		li{
+			list-style-type: none;
+		}
 	`,
 	activeDrawer: css`
 		transform: translate(0, 0);
@@ -112,12 +131,17 @@ const styles = {
 		background: #fff;
 		z-index: ${zIndex + 2};
 	`,
+	logoContainer: css`
+		height: ${logoSize}px;
+		width: 30px;
+		overflow: hidden;
+		margin-left: 13px;
+		margin-top: 20px;
+	`,
 	logo: css`
 		transform: rotate(-90deg);
 		width: ${logoSize}px;
 		height: ${logoSize}px;
-		margin-left: 13px;
-		margin-top: 20px;
 		img{
 			display: block;
 			width: 100%;
@@ -137,8 +161,10 @@ const styles = {
 		background: transparent;
 		cursor: pointer;
 		transition: transform ${animationDuration};
+		font-family: ${secondaryFont};
 		span{
-			font-size: 16px;
+			font-size: 14px;
+			font-weight: bold;
 			position: relative;
 			display: block;
 			transform: translate(0, 3px) scale(1);
@@ -160,8 +186,8 @@ const styles = {
 			height: 2px;
 			position: absolute;
 			top: 0;
-			left: 2px;
-			right: 2px;
+			left: 3px;
+			right: 3px;
 			transform: rotate(0) translate(0, 13px) scale(1);
 		}
 	`,

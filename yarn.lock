@@ -21520,6 +21520,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+typeface-dm-serif-display@^0.0.76:
+  version "0.0.76"
+  resolved "https://registry.yarnpkg.com/typeface-dm-serif-display/-/typeface-dm-serif-display-0.0.76.tgz#ab79d698652e20f70d76b5ea0c434f78cc72ddcc"
+  integrity sha512-/NRAQrlqNOez9hiVEHByTqcOoqAR4rCK0JkaD9kNXBNJyGioIpmhDpA+N/FYRQMv3Ke0523MI4PpIf0Mk5UgUQ==
+
 typeface-open-sans@^0.0.75:
   version "0.0.75"
   resolved "https://registry.npmjs.org/typeface-open-sans/-/typeface-open-sans-0.0.75.tgz#20d0c330f14c0c40463c334adbedd6005389abe4"
@@ -21527,6 +21532,11 @@ typeface-open-sans@^0.0.75:
 typeface-oswald@^0.0.75:
   version "0.0.75"
   resolved "https://registry.npmjs.org/typeface-oswald/-/typeface-oswald-0.0.75.tgz#39c9b6d4a08e78bbec0460ee71269b5f3ff5f64b"
+
+typeface-roboto@^0.0.75:
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.75.tgz#98d5ba35ec234bbc7172374c8297277099cc712b"
+  integrity sha512-VrR/IiH00Z1tFP4vDGfwZ1esNqTiDMchBEXYY9kilT6wRGgFoCAlgkEUMHb1E3mB0FsfZhv756IF0+R+SFPfdg==
 
 typescript@^3.6.4:
   version "3.7.2"

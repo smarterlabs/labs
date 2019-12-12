@@ -9,12 +9,12 @@ import {
 import {
 	primaryFont,
 	secondaryFont,
-} from 'config/fonts'
+} from '../../config/fonts'
 import linkMixin from '../mixins/link'
 import { siteSettings } from '@app-boilerplate/sanity-data'
 import './global.css'
-import 'typeface-open-sans'
-import 'typeface-oswald'
+import 'typeface-dm-serif-display'
+import 'typeface-roboto'
 
 const {
 	title: siteTitle,
@@ -60,7 +60,6 @@ const styles = {
 		}
 		h1, h2, h3{
 			font-family: ${primaryFont};
-			text-transform: uppercase;
 		}
 		li{
 			line-height: 1.3em;

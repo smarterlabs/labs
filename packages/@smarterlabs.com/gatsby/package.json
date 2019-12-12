@@ -25,7 +25,9 @@
     "babel-preset-gatsby": "^0.2.13",
     "gatsby": "^2.13.80",
     "gatsby-source-sanity": "^5.0.2",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "typeface-dm-serif-display": "^0.0.76",
+    "typeface-roboto": "^0.0.75"
   },
   "main": "dist/index.js",
   "devDependencies": {
@@ -33,6 +35,7 @@
     "@emotion/core": "^10.0.16",
     "@material-ui/core": "^4.1.1",
     "@material-ui/icons": "^4.2.0",
+    "@smarterlabs/gatsby-plugin-browser-dependencies": "*",
     "auth0-js": "^9.11.1",
     "codemirror": "^5.47.0",
     "color": "^3.1.2",
@@ -43,7 +46,6 @@
     "fs-extra": "^8.1.0",
     "gatsby-image": "^2.2.4",
     "gatsby-link": "^2.0.0-rc.2",
-    "@smarterlabs/gatsby-plugin-browser-dependencies": "*",
     "gatsby-plugin-canonical-urls": "^2.0.0-rc.1",
     "gatsby-plugin-emotion": "^4.1.4",
     "gatsby-plugin-favicon": "^3.1.4",
@@ -96,8 +98,6 @@
     "strip-html-comments": "^1.0.0",
     "striptags": "^3.1.1",
     "toml": "^3.0.0",
-    "typeface-open-sans": "^0.0.75",
-    "typeface-oswald": "^0.0.75",
     "ultimate-pagination": "^1.0.0",
     "wait-for-element": "^1.0.2",
     "yaml": "^1.0.0-rc.8",

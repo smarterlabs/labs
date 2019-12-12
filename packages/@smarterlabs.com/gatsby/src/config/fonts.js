@@ -1,4 +1,4 @@
 module.exports = {
-	primaryFont: `"Oswald", sans-serif`,
-	secondaryFont: `"Open Sans", sans-serif`,
+	primaryFont: `"DM Serif Display", serif`,
+	secondaryFont: `"Roboto", sans-serif`,
 }
