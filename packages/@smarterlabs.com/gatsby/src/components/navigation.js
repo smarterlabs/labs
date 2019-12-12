@@ -153,12 +153,13 @@ const styles = {
 	button: css`
 		margin-top: 60px;
 		position: relative;
+		left: 1px;
 		text-transform: uppercase;
 		padding: 0;
 		width: 50px;
 		height: 50px;
 		margin-left: 4px;
-		color: ${primaryColor};
+		color: #000;
 		border: 0;
 		outline: 0;
 		background: transparent;
@@ -185,7 +186,7 @@ const styles = {
 		:before, :after{
 			content: '';
 			display: block;
-			background: ${primaryColor};
+			background: ${secondaryColor};
 			height: 2px;
 			position: absolute;
 			top: 0;
