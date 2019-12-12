@@ -4,14 +4,14 @@ import Link from 'gatsby-link'
 import logo from '../img/logo.svg'
 import { primaryColor, secondaryColor } from '../config/colors'
 
-const navOpenTimeout = 300
+const navOpenTimeout = 200
 
 export default function Header(){
 	const [open, setOpen] = useState(false)
 	const [animating, setAnimating] = useState(false)
 
-	function toggleNav(val){
-		if(animating) return
+	function toggleNav(val, respectTimeout){
+		if (respectTimeout && animating) return
 		if(val === undefined) val = !open
 		setAnimating(true)
 		setTimeout(() => setAnimating(false), navOpenTimeout)
@@ -50,7 +50,7 @@ export default function Header(){
 					</li>
 				</ul>
 			</div>
-			<div css={styles.bar} onMouseEnter={() => toggleNav(true)}>
+			<div css={styles.bar} onMouseEnter={() => toggleNav(true, true)}>
 				<div css={styles.logo}>
 					<img src={logo} />
 				</div>
