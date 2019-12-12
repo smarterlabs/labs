@@ -78,13 +78,6 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/markdown`,
-				name: `markdown`,
-			},
-		},
-		{
 			resolve: `gatsby-source-sanity`,
 			options: {
 				projectId,
