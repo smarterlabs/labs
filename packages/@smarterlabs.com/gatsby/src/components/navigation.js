@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import Link from 'gatsby-link'
-import { primaryColor } from '../config/colors'
+import logo from '../img/logo.svg'
+import { primaryColor, secondaryColor } from '../config/colors'
+
+const navOpenTimeout = 300
 
 export default function Header(){
 	const [open, setOpen] = useState(false)
+	const [animating, setAnimating] = useState(false)
 
-	function onHamburgerClick(e){
-		e.preventDefault()
-		setOpen(!open)
+	function toggleNav(val){
+		if(animating) return
+		if(val === undefined) val = !open
+		setAnimating(true)
+		setTimeout(() => setAnimating(false), navOpenTimeout)
+		setOpen(val)
 	}
 
 	return (
 		<nav>
-			<div css={styles.bar}>
-				<div>Logo</div>
-				<button
-					onClick={onHamburgerClick}
-					css={[styles.button, open && styles.activeButton]}
-				>
-					<span>{open ? `Close` : `Menu`}</span>
-				</button>
-			</div>
+			<div
+				css={[styles.backdrop, open && styles.activeBackdrop]}
+				onMouseEnter={() => toggleNav(false)}
+				onClick={() => toggleNav(false)}
+			/>
 			<div css={[styles.drawer, open && styles.activeDrawer]}>
 				<ul>
 					<li>
@@ -47,14 +50,58 @@ export default function Header(){
 					</li>
 				</ul>
 			</div>
+			<div css={styles.bar} onMouseEnter={() => toggleNav(true)}>
+				<div css={styles.logo}>
+					<img src={logo} />
+				</div>
+				<button
+					onClick={() => toggleNav()}
+					css={[styles.button, open && styles.activeButton]}
+				>
+					<span>{open ? `Close` : `Menu`}</span>
+				</button>
+			</div>
 		</nav>
 	)
 }
 
 export const navBarWidth = 60
 const drawerWidth = 200
+const logoSize = 200
+const zIndex = 900
+const animationDuration = `.3s`
 
 const styles = {
+	backdrop: css`
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		visibility: hidden;
+		opacity: 0;
+		z-index: ${zIndex};
+		background: ${primaryColor};
+		transition: visibility ${animationDuration}, opacity ${animationDuration};
+	`,
+	activeBackdrop: css`
+		visibility: visible;
+		opacity: 1;
+	`,
+	drawer: css`
+		width: ${drawerWidth}px;
+		transform: translate(-${drawerWidth}px, 0);
+		transition: transform ${animationDuration};
+		background-color: #362284;
+		background-image: linear-gradient(19deg, #362284 0%, #00b78d 100%);
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		z-index: ${zIndex + 1};
+	`,
+	activeDrawer: css`
+		transform: translate(0, 0);
+	`,
 	bar: css`
 		position: fixed;
 		top: 0;
@@ -63,26 +110,48 @@ const styles = {
 		width: ${navBarWidth}px;
 		box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 		background: #fff;
-		z-index: 3;
+		z-index: ${zIndex + 2};
+	`,
+	logo: css`
+		transform: rotate(-90deg);
+		width: ${logoSize}px;
+		height: ${logoSize}px;
+		margin-left: 13px;
+		margin-top: 20px;
+		img{
+			display: block;
+			width: 100%;
+		}
 	`,
 	button: css`
+		margin-top: 60px;
 		position: relative;
 		text-transform: uppercase;
 		padding: 0;
 		width: 50px;
 		height: 50px;
-		margin-top: 30px;
 		margin-left: 4px;
 		color: ${primaryColor};
 		border: 0;
 		outline: 0;
 		background: transparent;
 		cursor: pointer;
+		transition: transform ${animationDuration};
 		span{
 			font-size: 16px;
 			position: relative;
 			display: block;
 			transform: translate(0, 3px) scale(1);
+		}
+		:before{
+			visibility: hidden;
+			transition: transform ${animationDuration}, visibility ${animationDuration}, background ${animationDuration};
+		}
+		:after{
+			transition: transform ${animationDuration}, background ${animationDuration};
+		}
+		span{
+			transition: transform ${animationDuration}, color ${animationDuration};
 		}
 		:before, :after{
 			content: '';
@@ -95,27 +164,22 @@ const styles = {
 			right: 2px;
 			transform: rotate(0) translate(0, 13px) scale(1);
 		}
-		span, :before, :after{
-			transition: transform .3s;
-		}
 	`,
 	activeButton: css`
+		transform: translate(${drawerWidth + 75}px, 0);
+		:before, :after{
+			background: #fff;
+		}
 		:before{
-			transform: rotate(40deg) translate(10px, 12px) scale(.8);
+			visibility: visible;
+			transform: rotate(45deg) translate(10px, 10px) scale(.8);
 		}
 		:after{
-			transform: rotate(-40deg) translate(-10px, 12px) scale(.8);
+			transform: rotate(-45deg) translate(-10px, 10px) scale(.8);
 		}
 		span{
-			transform: translate(0, 16px) scale(.75);
+			transform: translate(0, 16px) scale(.7);
+			color: ${secondaryColor};
 		}
-	`,
-	drawer: css`
-		width: ${drawerWidth}px;
-		transform: translate(-${drawerWidth}px, 0);
-		transition: transform .3s;
-	`,
-	activeDrawer: css`
-		transform: translate(0, 0);
 	`,
 }
