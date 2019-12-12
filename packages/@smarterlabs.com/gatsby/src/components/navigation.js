@@ -95,7 +95,7 @@ const styles = {
 	drawer: css`
 		width: ${drawerWidth}px;
 		transform: translate(-${drawerWidth}px, 0);
-		transition: transform ${animationDuration};
+		transition: transform ${animationDuration}, opacity ${animationDuration};
 		background-color: #362284;
 		background-image: linear-gradient(19deg, #362284 0%, #00b78d 100%);
 		padding: 25px;
@@ -103,6 +103,8 @@ const styles = {
 		top: 0;
 		bottom: 0;
 		z-index: ${zIndex + 1};
+		box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+		opacity: 0;
 		a{
 			color: #fff;
 			display: block;
@@ -120,6 +122,7 @@ const styles = {
 	`,
 	activeDrawer: css`
 		transform: translate(0, 0);
+		opacity: 1;
 	`,
 	bar: css`
 		position: fixed;
