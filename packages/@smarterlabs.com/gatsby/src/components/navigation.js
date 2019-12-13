@@ -1,11 +1,10 @@
-import React, { useState, useRef } from 'react'
-import { css, keyframes } from '@emotion/core'
+import React, { useState } from 'react'
+import { css } from '@emotion/core'
 import Link from 'gatsby-link'
-import Tagline from '../tagline'
-import Logo from '../logo'
-import Circle from './circle'
-import { primaryColor, secondaryColor } from '../../config/colors'
-import { secondaryFont } from '../../config/fonts'
+import Tagline from './tagline'
+import logo from '../img/logo.svg'
+import { primaryColor, secondaryColor } from '../config/colors'
+import { secondaryFont } from '../config/fonts'
 
 export const navBarWidth = 60
 const drawerWidth = 300
@@ -17,8 +16,6 @@ const navOpenTimeout = 200
 export default function Header(){
 	const [open, setOpen] = useState(false)
 	const [animating, setAnimating] = useState(false)
-	const [clickCoords, setClickCoords] = useState(false)
-	const drawerEl = useRef(null)
 
 	function toggleNav(val, respectTimeout){
 		if (respectTimeout && animating) return
@@ -28,67 +25,43 @@ export default function Header(){
 		setOpen(val)
 	}
 
-	function clickDrawer(e){
-		if(!drawerEl.current) return
-		const rect = drawerEl.current.getBoundingClientRect()
-		const x = e.clientX - rect.left
-		const y = e.clientY - rect.top
-		setClickCoords(false)
-		setTimeout(() => animateCircle(x, y), 1)
-	}
-
-	function animateCircle(x, y){
-		setClickCoords({ x, y })
-	}
-
 	return (
-		<nav>
+		<nav css={styles.nav}>
 			<div
 				css={[styles.backdrop, open && styles.activeBackdrop]}
 				onMouseEnter={() => toggleNav(false)}
 				onClick={() => toggleNav(false)}
 			/>
-			<div
-				css={[styles.drawer, open && styles.activeDrawer]}
-				onClick={clickDrawer}
-				ref={drawerEl}
-			>
-				{clickCoords && (
-					<div css={styles.circle} style={{top: clickCoords.y, left: clickCoords.x}}>
-						<Circle />
-					</div>
-				)}
-				<div css={styles.drawerContent}>
-					<Tagline />
-					<ul css={styles.links}>
-						<li>
-							<Link to='/design'>Design</Link>
-						</li>
-						<li>
-							<Link to='/development'>Web & App Development</Link>
-						</li>
-						<li>
-							<Link to='/solutions'>Solutions</Link>
-						</li>
-						<li>
-							<Link to='/consulting'>Consulting</Link>
-						</li>
-						<li>
-							<Link to='/work'>Work</Link>
-						</li>
-						<li>
-							<Link to='/about-us'>About Us</Link>
-						</li>
-						<li>
-							<Link to='/contact'>Contact</Link>
-						</li>
-					</ul>
-				</div>
+			<div css={[styles.drawer, open && styles.activeDrawer]}>
+				<Tagline />
+				<ul css={styles.links}>
+					<li>
+						<Link to='/design'>Design</Link>
+					</li>
+					<li>
+						<Link to='/development'>Web & App Development</Link>
+					</li>
+					<li>
+						<Link to='/solutions'>Solutions</Link>
+					</li>
+					<li>
+						<Link to='/consulting'>Consulting</Link>
+					</li>
+					<li>
+						<Link to='/work'>Work</Link>
+					</li>
+					<li>
+						<Link to='/about-us'>About Us</Link>
+					</li>
+					<li>
+						<Link to='/contact'>Contact</Link>
+					</li>
+				</ul>
 			</div>
 			<div css={styles.bar} onMouseEnter={() => toggleNav(true, true)}>
 				<div css={styles.logoContainer}>
 					<div css={styles.logo}>
-						<Logo />
+						<img src={logo} />
 					</div>
 				</div>
 				<button
@@ -102,25 +75,9 @@ export default function Header(){
 	)
 }
 
-const expand = keyframes`
-	0% {
-		transform: translate(-50%, -50%) scale(0);
-		opacity: 1;
-	}
-	50%{
-		opacity: 1;
-	}
-	100%{
-		transform: translate(-50%, -50%) scale(2);
-		opacity: 0;
-	}
-`
-
 const styles = {
-	circle: css`
-		position: absolute;
-		z-index: -1;
-		animation: ${expand} 1.3s forwards;
+	nav: css`
+		user-select: none;
 	`,
 	backdrop: css`
 		position: fixed;
@@ -151,7 +108,6 @@ const styles = {
 		z-index: ${zIndex + 1};
 		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 		opacity: 0;
-		overflow: hidden;
 		a{
 			color: #fff;
 			display: block;
