@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import Link from 'gatsby-link'
-import Tagline from './tagline'
-import logo from '../img/logo.svg'
-import { primaryColor, secondaryColor } from '../config/colors'
-import { secondaryFont } from '../config/fonts'
+import Tagline from '../tagline'
+import Logo from '../logo'
+import Circle from './circle'
+import { primaryColor, secondaryColor } from '../../config/colors'
+import { secondaryFont } from '../../config/fonts'
 
 export const navBarWidth = 60
 const drawerWidth = 300
@@ -16,6 +17,7 @@ const navOpenTimeout = 200
 export default function Header(){
 	const [open, setOpen] = useState(false)
 	const [animating, setAnimating] = useState(false)
+	const [click, setClick] = useState(false)
 
 	function toggleNav(val, respectTimeout){
 		if (respectTimeout && animating) return
@@ -32,9 +34,15 @@ export default function Header(){
 				onMouseEnter={() => toggleNav(false)}
 				onClick={() => toggleNav(false)}
 			/>
-			<div css={[styles.drawer, open && styles.activeDrawer]}>
+			<div
+				css={[styles.drawer, open && styles.activeDrawer]}
+				onClick={() => setClick(true)}
+			>
+				{click && (
+					<Circle />
+				)}
 				<Tagline />
-				<ul>
+				<ul css={styles.links}>
 					<li>
 						<Link to='/design'>Design</Link>
 					</li>
@@ -61,7 +69,7 @@ export default function Header(){
 			<div css={styles.bar} onMouseEnter={() => toggleNav(true, true)}>
 				<div css={styles.logoContainer}>
 					<div css={styles.logo}>
-						<img src={logo} />
+						<Logo />
 					</div>
 				</div>
 				<button
@@ -103,7 +111,7 @@ const styles = {
 		top: 0;
 		bottom: 0;
 		z-index: ${zIndex + 1};
-		box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 		opacity: 0;
 		a{
 			color: #fff;
@@ -124,13 +132,19 @@ const styles = {
 		transform: translate(0, 0);
 		opacity: 1;
 	`,
+	links: css`
+		margin-top: 60px;
+		li{
+			margin-top: 10px;
+		}
+	`,
 	bar: css`
 		position: fixed;
 		top: 0;
 		left: 0;
 		bottom: 0;
 		width: ${navBarWidth}px;
-		box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 		background: #fff;
 		z-index: ${zIndex + 2};
 	`,
