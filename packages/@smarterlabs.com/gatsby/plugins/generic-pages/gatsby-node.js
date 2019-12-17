@@ -2,7 +2,6 @@ const { resolve } = require(`path`)
 
 const postTemplate = resolve(`src/templates/generic.js`)
 
-const sanityKeyExist = !!process.env.SANITY_READ_TOKEN
 exports.createPages = async function({ actions, graphql }){
 	const { createPage } = actions
 
@@ -19,24 +18,7 @@ exports.createPages = async function({ actions, graphql }){
 		}
 	}`
 
-	const markdownQuery = `{
-		pages: allMarkdownRemark(filter: {
-			fileAbsolutePath: { regex: "/src/markdown/pages/" }
-		}) {
-			edges {
-				node {
-					frontmatter {
-						id
-						slug
-					}
-				}
-			}
-		}
-	}`
-
-	let res = sanityKeyExist
-		? await graphql(sanityQuery)
-		: await graphql(markdownQuery)
+	let res = await graphql(sanityQuery)
 
 	if (res.errors) {
 		console.error(res.errors)
@@ -46,14 +28,8 @@ exports.createPages = async function({ actions, graphql }){
 	let homePageExist = false
 
 	res.data && res.data.pages.edges.forEach(({ node }) => {
-		let id, slug
-		if(node.frontmatter) {
-			id = node.frontmatter.id
-			slug = node.frontmatter.slug
-		} else {
-			id = node.id
-			slug = node.slug.current
-		}
+		const id = node.id
+		const slug = node.slug.current
 		if(slug === `/`) homePageExist = true
 		createPage({
 			path: slug,

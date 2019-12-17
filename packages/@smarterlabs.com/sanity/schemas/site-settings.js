@@ -37,5 +37,10 @@ export default {
 			title: `Contact Email`,
 			type: `string`,
 		},
+		{
+			name: `icon`,
+			title: `Icon`,
+			type: `image`,
+		},
 	],
 }
