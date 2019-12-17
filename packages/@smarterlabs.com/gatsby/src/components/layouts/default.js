@@ -22,87 +22,18 @@ export default function Layout({
 	description,
 	children,
 }) {
-
-	const data = useStaticQuery(graphql`
-		query HeaderQuery {
-			sanitySiteSettings{
-				title
-				description
-				ico32: icon {
-					asset{
-						fixed(height: 32, width: 32) {
-							src
-						}
-					}
-				}
-				ico57: icon {
-					asset{
-						fixed(height: 57, width: 57) {
-							src
-						}
-					}
-				}
-				ico76: icon {
-					asset{
-						fixed(height: 76, width: 76) {
-							src
-						}
-					}
-				}
-				ico96: icon {
-					asset{
-						fixed(height: 96, width: 96) {
-							src
-						}
-					}
-				}
-				ico128: icon {
-					asset{
-						fixed(height: 128, width: 128) {
-							src
-						}
-					}
-				}
-				ico192: icon {
-					asset{
-						fixed(height: 192, width: 192) {
-							src
-						}
-					}
-				}
-				ico228: icon {
-					asset{
-						fixed(height: 228, width: 228) {
-							src
-						}
-					}
-				}
-			}
-		}
-  `)
-	console.log(data)
-	const {
-		sanitySiteSettings: {
-			title: siteTitle,
-			description: siteDescription,
-		},
-	} = data
+	const { settings } = useStaticQuery(query)
 	return (
 		<>
 			<Helmet>
 				<html lang='en' />
-				<title>{title ? `${title} | ${siteTitle}` : siteTitle}</title>
-				<meta name='description' content={description || siteDescription} />
+				<title>{title ? `${title} | ${settings.title}` : settings.title}</title>
+				<meta name='description' content={description || settings.title} />
 				<meta property='og:title' content={title} />
-				<meta property='og:site_name' content={siteTitle} />
-
-				<link rel="icon" href={data.sanitySiteSettings.ico32.asset.fixed.src} sizes="32x32" />
-				<link rel="icon" href={data.sanitySiteSettings.ico57.asset.fixed.src} sizes="57x57" />
-				<link rel="icon" href={data.sanitySiteSettings.ico76.asset.fixed.src} sizes="76x76" />
-				<link rel="icon" href={data.sanitySiteSettings.ico96.asset.fixed.src} sizes="96x96" />
-				<link rel="icon" href={data.sanitySiteSettings.ico128.asset.fixed.src} sizes="128x128" />
-				<link rel="icon" href={data.sanitySiteSettings.ico192.asset.fixed.src} sizes="192x192" />
-				<link rel="icon" href={data.sanitySiteSettings.ico228.asset.fixed.src} sizes="228x228" />
+				<meta property='og:site_name' content={settings.title} />
+				{[32, 57, 76, 96, 128, 192, 228].map(size => (
+					<link key={`icon${size}`} rel="icon" href={settings[`ico${size}`].asset.fixed.src} sizes={`${size}x${size}`} />
+				))}
 			</Helmet>
 			<div css={styles.layout}>
 				<Navigation />
@@ -152,3 +83,61 @@ const styles = {
 		flex: 1 0 auto;
 	`,
 }
+
+const query = graphql`
+	query HeaderQuery {
+		settings: sanitySiteSettings{
+			title
+			description
+			ico32: icon {
+				asset{
+					fixed(height: 32, width: 32) {
+						src
+					}
+				}
+			}
+			ico57: icon {
+				asset{
+					fixed(height: 57, width: 57) {
+						src
+					}
+				}
+			}
+			ico76: icon {
+				asset{
+					fixed(height: 76, width: 76) {
+						src
+					}
+				}
+			}
+			ico96: icon {
+				asset{
+					fixed(height: 96, width: 96) {
+						src
+					}
+				}
+			}
+			ico128: icon {
+				asset{
+					fixed(height: 128, width: 128) {
+						src
+					}
+				}
+			}
+			ico192: icon {
+				asset{
+					fixed(height: 192, width: 192) {
+						src
+					}
+				}
+			}
+			ico228: icon {
+				asset{
+					fixed(height: 228, width: 228) {
+						src
+					}
+				}
+			}
+		}
+	}
+`
