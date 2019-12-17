@@ -14,7 +14,7 @@ const zIndex = 900
 const animationDuration = `.3s`
 const navOpenTimeout = 200
 
-export default function Header(){
+export default function Navigation() {
 	const [open, setOpen] = useState(false)
 	const [animating, setAnimating] = useState(false)
 	const [clickCoords, setClickCoords] = useState(false)
@@ -34,11 +34,7 @@ export default function Header(){
 		const x = e.clientX - rect.left
 		const y = e.clientY - rect.top
 		setClickCoords(false)
-		setTimeout(() => animateCircle(x, y), 1)
-	}
-
-	function animateCircle(x, y){
-		setClickCoords({ x, y })
+		setTimeout(() => setClickCoords({ x, y }), 1)
 	}
 
 	return (
@@ -107,11 +103,11 @@ const expand = keyframes`
 		transform: translate(-50%, -50%) scale(0);
 		opacity: 1;
 	}
-	50%{
+	60%{
 		opacity: 1;
 	}
 	100%{
-		transform: translate(-50%, -50%) scale(2);
+		transform: translate(-50%, -50%) scale(3);
 		opacity: 0;
 	}
 `
@@ -120,7 +116,7 @@ const styles = {
 	circle: css`
 		position: absolute;
 		z-index: -1;
-		animation: ${expand} 1.3s forwards;
+		animation: ${expand} 1s forwards linear;
 	`,
 	backdrop: css`
 		position: fixed;

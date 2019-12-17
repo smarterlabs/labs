@@ -11,7 +11,7 @@ import {
 	secondaryFont,
 } from '../../config/fonts'
 import linkMixin from '../mixins/link'
-import { siteSettings } from '@app-boilerplate/sanity-data'
+import { siteSettings } from '@smarterlabs.com/sanity-data'
 import './global.css'
 import 'typeface-dm-serif-display'
 import 'typeface-roboto'
