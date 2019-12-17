@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Circle(){
+export default function NavCircle(){
 	return (
 		<svg id="SLClickAnimation" imageRendering="auto" baseProfile="basic" version="1.1" x="0px" y="0px" width="720" height="720">
 			<g id="Scene-1r1" overflow="visible">

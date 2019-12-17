@@ -1,7 +1,8 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { Helmet } from 'react-helmet'
-import Navigation, { navBarWidth } from '../navigation'
+import Navigation from '../navigation'
+import { navBarWidth } from '../navigation/config'
 import {
 	white,
 	primaryColor,
