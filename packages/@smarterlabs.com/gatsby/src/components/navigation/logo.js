@@ -1,15 +1,16 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import Link from 'gatsby-link'
 import Logo from '../logo'
 import { logoSize } from './config'
 
 export default function NavLogo() {
 	return (
-		<div css={styles.logoContainer}>
+		<Link to='/' css={styles.logoContainer}>
 			<div css={styles.logo}>
 				<Logo />
 			</div>
-		</div>
+		</Link>
 	)
 }
 
@@ -20,6 +21,7 @@ const styles = {
 		overflow: hidden;
 		margin-left: 13px;
 		margin-top: 20px;
+		display: block;
 	`,
 	logo: css`
 		transform: rotate(-90deg);
