@@ -22,8 +22,8 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-remove-trailing-slashes`,
-		// `blog`,
 		`generic-pages`,
+		// `work-pages`,
 		{
 			resolve: `@smarterlabs/gatsby-source-cloudinary`,
 			options: {
@@ -32,20 +32,6 @@ module.exports = {
 				cloudName: CLOUDINARY_NAME,
 			},
 		},
-		// {
-		// 	resolve: `@smarterlabs/gatsby-plugin-browser-dependencies`,
-		// 	option: {
-		// 		dependencies: [
-		// 			`auth-js`,
-		// 		],
-		// 	},
-		// },
-		// {
-		// 	resolve: `email-templates`,
-		// 	options: {
-		// 		siteUrl,
-		// 	},
-		// },
 		{
 			resolve: `gatsby-plugin-sitemap`,
 			options: {

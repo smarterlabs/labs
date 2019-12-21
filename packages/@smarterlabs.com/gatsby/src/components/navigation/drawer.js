@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react'
 import { css, keyframes } from '@emotion/core'
-import Link from 'gatsby-link'
 import Tagline from '../tagline'
 import Circle from './circle'
-import { primaryColor } from '../../config/colors'
+import Links from './links'
+import Social from './social'
 import { drawerWidth, zIndex, animationDuration } from './config'
 
 export default function NavDrawer({ open }) {
@@ -32,29 +32,8 @@ export default function NavDrawer({ open }) {
 			)}
 			<div css={styles.drawerContent}>
 				<Tagline />
-				<ul css={styles.links}>
-					<li>
-						<Link to='/design'>Design</Link>
-					</li>
-					<li>
-						<Link to='/development'>Web & App Development</Link>
-					</li>
-					<li>
-						<Link to='/solutions'>Solutions</Link>
-					</li>
-					<li>
-						<Link to='/consulting'>Consulting</Link>
-					</li>
-					<li>
-						<Link to='/work'>Work</Link>
-					</li>
-					<li>
-						<Link to='/about-us'>About Us</Link>
-					</li>
-					<li>
-						<Link to='/contact'>Contact</Link>
-					</li>
-				</ul>
+				<Links />
+				<Social />
 			</div>
 		</div>
 	)
@@ -94,29 +73,9 @@ const styles = {
 		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 		opacity: 0;
 		overflow: hidden;
-		a{
-			color: #fff;
-			display: block;
-			:hover, :active{
-				color: ${primaryColor};
-				text-decoration: none;
-			}
-		}
-		ul{
-			padding: 0;
-		}
-		li{
-			list-style-type: none;
-		}
 	`,
 	activeDrawer: css`
 		transform: translate(0, 0);
 		opacity: 1;
-	`,
-	links: css`
-		margin-top: 60px;
-		li{
-			margin-top: 10px;
-		}
 	`,
 }

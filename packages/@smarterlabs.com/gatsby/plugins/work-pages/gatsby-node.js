@@ -1,12 +1,12 @@
 const { resolve } = require(`path`)
 
-const genericTemplate = resolve(`src/templates/generic.js`)
+const workTemplate = resolve(`src/templates/work.js`)
 
 exports.createPages = async function({ actions, graphql }){
 	const { createPage } = actions
 
 	const sanityQuery = `{
-		pages: allSanityPage{
+		allSanityWork{
 			edges{
 				node{
 					id
@@ -25,28 +25,15 @@ exports.createPages = async function({ actions, graphql }){
 		process.exit(1)
 	}
 
-	let homePageExist = false
-
-	res.data && res.data.pages.edges.forEach(({ node }) => {
+	res.data && res.data.allSanityWork.edges.forEach(({ node }) => {
 		const id = node.id
 		const slug = node.slug.current
-		if(slug === `/`) homePageExist = true
 		createPage({
 			path: slug,
-			component: genericTemplate,
+			component: workTemplate,
 			context: {
 				id,
 			},
 		})
 	})
-
-	if(!homePageExist){
-		createPage({
-			path: `/`,
-			component: genericTemplate,
-			context: {
-				id: `default`,
-			},
-		})
-	}
 }

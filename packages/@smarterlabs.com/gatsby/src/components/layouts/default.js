@@ -37,9 +37,7 @@ export default function Layout({
 			</Helmet>
 			<div css={styles.layout}>
 				<Navigation />
-				<div css={styles.content}>
-					<main>{children}</main>
-				</div>
+				<main>{children}</main>
 			</div>
 		</>
 	)
@@ -74,13 +72,6 @@ const styles = {
 			color: ${white};
 			background-color: ${primaryColor};
 		}
-	`,
-	content: css`
-		margin: 0 auto;
-		padding: 0 30px;
-		max-width: 960px;
-		width: 100%;
-		flex: 1 0 auto;
 	`,
 }
 
