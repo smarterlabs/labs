@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import Img from 'gatsby-image'
+import BgImg from 'gatsby-background-image'
 import Layout from '../components/layouts/default'
 
 export default function HomePage({
@@ -11,29 +11,46 @@ export default function HomePage({
 }){
 	return (
 		<Layout>
-			<div css={styles.hero}>
-				<Img fluid={fluid} />
-			</div>
+			<section css={styles.container}>
+				<div css={styles.fill}>
+					<BgImg fluid={fluid} css={styles.img} />
+				</div>
+				<div css={[styles.fill, styles.gradient]} />
+			</section>
 		</Layout>
 	)
 }
 
 const styles = {
-	hero: css`
+	container: css`
 		width: 100%;
 		height: 100vh;
-		overflow: hidden;
+		position: relative;
+	`,
+	fill: css`
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	`,
+	img: css`
+		width: 100%;
+		height: 100vh;
+		mix-blend-mode: multiply;
+	`,
+	gradient: css`
+		background-image: linear-gradient(30deg, #362284 0%, #00b78d 100%);
+		mix-blend-mode: multiply;
 	`,
 }
 
 export const query = graphql`
 	query HomePage {
-		cloudinary(publicId:{eq: "background_mbfepm"}){
-			id
-			fluid(maxWidth: 4000) {
+		cloudinary(publicId:{eq: "background_jgghh5"}){
+			fluid(maxWidth: 3000) {
 				...GatsbyCloudinaryFluid
 			}
 		}
 	}
-
 `

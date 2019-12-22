@@ -25,6 +25,7 @@
     "@sanity/image-url": "^0.140.15",
     "babel-preset-gatsby": "^0.2.13",
     "gatsby": "^2.13.80",
+    "gatsby-background-image": "^0.9.12",
     "gatsby-source-sanity": "^5.0.2",
     "isomorphic-fetch": "^2.2.1",
     "typeface-dm-serif-display": "^0.0.76",
