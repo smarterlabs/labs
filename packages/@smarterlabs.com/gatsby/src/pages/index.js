@@ -3,6 +3,9 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import BgImg from 'gatsby-background-image'
 import Layout from '../components/layouts/default'
+import Logo from '../components/logo'
+import Tagline from '../components/tagline'
+import Description from '../components/description'
 
 export default function HomePage({
 	data: {
@@ -16,12 +19,28 @@ export default function HomePage({
 					<BgImg fluid={fluid} css={styles.img} />
 				</div>
 				<div css={[styles.fill, styles.gradient]} />
+				<div css={styles.content}>
+					<Logo color='#fff' css={styles.logo} />
+					<Tagline />
+					<Description />
+				</div>
 			</section>
 		</Layout>
 	)
 }
 
 const styles = {
+	content: css`
+		padding: 30px;
+		max-width: 600px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: #fff;
+	`,
+	logo: css`
+		max-width: 300px;
+	`,
 	container: css`
 		width: 100%;
 		height: 100vh;
