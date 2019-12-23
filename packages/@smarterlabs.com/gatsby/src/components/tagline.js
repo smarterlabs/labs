@@ -28,12 +28,14 @@ export default function Tagline(props = {}){
 
 const styles = {
 	container: css`
-		font-size: 1.3em;
+		font-size: 7vw;
 		display: block;
+		@media(min-width: 800px){
+			font-size: 1.8em;
+		}
 	`,
 	inner: css`
 		border-bottom: 2px solid ${secondaryColor};
-		display: inline-block;
 	`,
 	top: css`
 		color: #fff;

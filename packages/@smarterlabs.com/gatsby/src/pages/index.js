@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import BgImg from 'gatsby-background-image'
 import Layout from '../components/layouts/default'
-import Logo from '../components/logo'
+// import Logo from '../components/logo'
 import Tagline from '../components/tagline'
 import Description from '../components/description'
 
@@ -20,9 +20,9 @@ export default function HomePage({
 				</div>
 				<div css={[styles.fill, styles.gradient]} />
 				<div css={styles.content}>
-					<Logo color='#fff' css={styles.logo} />
+					{/* <Logo color='#fff' css={styles.logo} /> */}
 					<Tagline />
-					<Description />
+					<Description css={styles.description} />
 				</div>
 			</section>
 		</Layout>
@@ -32,11 +32,18 @@ export default function HomePage({
 const styles = {
 	content: css`
 		padding: 30px;
-		max-width: 600px;
 		position: absolute;
-		top: 0;
+		top: 50%;
 		left: 0;
+		transform: translate(0, -50%);
 		color: #fff;
+		@media(min-width: 800px){
+			width: 600px;
+			padding-left: 60px;
+		}
+	`,
+	description: css`
+		padding-left: 20px;
 	`,
 	logo: css`
 		max-width: 300px;
@@ -67,7 +74,7 @@ const styles = {
 export const query = graphql`
 	query HomePage {
 		cloudinary(publicId:{eq: "background_jgghh5"}){
-			fluid(maxWidth: 3000) {
+			fluid(maxWidth: 3000, quality: 90) {
 				...GatsbyCloudinaryFluid
 			}
 		}
