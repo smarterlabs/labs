@@ -6,8 +6,8 @@
 	"scripts": {
 		"bootstrap": "npx lerna bootstrap --use-workspaces",
 		"build": "npx lerna run build --stream",
-		"build:app-boilerplate": "npx lerna run build --stream --scope @app-boilerplate",
-		"build:smarterlabs.com": "npx lerna run build --stream --scope @smarterlabs.com",
+		"build:app-boilerplate": "npx lerna run build --stream --scope @app-boilerplate/*",
+		"build:smarterlabs.com": "npx lerna run build --stream --scope @smarterlabs.com/*",
 		"circle": "npx open-cli https://circleci.com/gh/smarterlabs/workflows/labs",
 		"clean": "rm -rf public && npx lerna run clean --stream --no-sort --concurrency 999",
 		"deploy": "npx lerna run deploy --stream --no-sort --concurrency 999",
