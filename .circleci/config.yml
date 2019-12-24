@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Deploy App Boilerplate to Production
           command: yarn run deploy:app-boilerplate
-  deploy-smarterlabs.com:
+  deploy-smarterlabs-com:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -83,7 +83,7 @@ workflows:
               only: master
           requires:
             - test
-      - deploy-smarterlabs.com:
+      - deploy-smarterlabs-com:
           filters:
             branches:
               only: master
