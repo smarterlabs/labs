@@ -28,9 +28,20 @@ jobs:
           key: yarn-packages-v3-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  build-app-boilerplate:
       - run:
           name: Build Applications
-          command: yarn run build
+          command: yarn run build:app-boilerplate
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  build-smarterlabs-com:
+      - run:
+          name: Build Applications
+          command: yarn run build:smarterlabs.com
       - persist_to_workspace:
           root: ~/repo
           paths: .
@@ -74,13 +85,27 @@ workflows:
   build_test_deploy:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+      # - test:
+      #     requires:
+      #       - build
       - deploy-npm:
           filters:
             branches:
               only: master
+          requires:
+            - test
+      - build-smarterlabs-com:
+          filters:
+            branches:
+              only: master
+          context: smarterlabs.com
+          requires:
+            - test
+      - build-app-boilerplate:
+          filters:
+            branches:
+              only: master
+          context: app-boilerplate
           requires:
             - test
       - deploy-smarterlabs-com:
@@ -89,11 +114,11 @@ workflows:
               only: master
           context: smarterlabs.com
           requires:
-            - test
+            - deploy-smarterlabs.com
       - deploy-app-boilerplate:
           filters:
             branches:
               only: master
           context: app-boilerplate
           requires:
-            - test
+            - build-app-boilerplate
