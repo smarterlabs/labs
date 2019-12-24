@@ -118,7 +118,7 @@ workflows:
               only: master
           context: smarterlabs.com
           requires:
-            - deploy-smarterlabs.com
+            - deploy-smarterlabs-com
       - deploy-app-boilerplate:
           filters:
             branches:
