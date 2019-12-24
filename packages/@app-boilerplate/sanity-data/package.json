@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx dotenv -e ../../../.env -- node fetch",
-    "dev": "npx dotenv -e ../../../.env -- node fetch",
+    "build": "npx dotenv -e ../../../.env -e ../.env -- node fetch",
+    "dev": "npx dotenv -e ../../../.env -e ../.env -- node fetch",
     "clean": "rm -rf dist"
   },
   "dependencies": {

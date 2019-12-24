@@ -3,9 +3,9 @@
 	"private": true,
 	"version": "0.0.0",
 	"scripts": {
-		"build": "npx dotenv -e ../../../.env -- npx netlify-lambda build src --config webpack-config.js",
+		"build": "npx dotenv -e ../../../.env -e ../.env -- npx netlify-lambda build src --config webpack-config.js",
 		"clean": "rm -rf dist",
-		"dev": "npx dotenv -e ../../../.env -- npx netlify-lambda serve src --config webpack-config.js"
+		"dev": "npx dotenv -e ../../../.env -e ../.env -- npx netlify-lambda serve src --config webpack-config.js"
 	},
 	"dependencies": {
 		"@octokit/rest": "^16.28.9",

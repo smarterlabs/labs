@@ -1,5 +1,5 @@
 const {
-	WEBSITE_SANITY_READ_TOKEN,
+	SANITY_READ_TOKEN,
 	CLOUDINARY_API_KEY,
 	CLOUDINARY_API_SECRET,
 	CLOUDINARY_NAME,
@@ -68,7 +68,7 @@ module.exports = {
 			options: {
 				projectId,
 				dataset,
-				token: WEBSITE_SANITY_READ_TOKEN,
+				token: SANITY_READ_TOKEN,
 			},
 		},
 		{
