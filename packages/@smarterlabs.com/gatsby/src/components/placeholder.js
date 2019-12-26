@@ -5,12 +5,13 @@ import { css } from '@emotion/core'
 export default function Placeholder({
 	ratio,
 	children,
+	css,
 	...otherProps
 }) {
 	const [w, h] = ratio
 	return (
 		<div
-			css={styles.outer}
+			css={[styles.outer, css]}
 			style={{ paddingTop: `${(h / w) * 100}%` }}
 			{...otherProps}
 		>

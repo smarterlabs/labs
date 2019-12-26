@@ -4,6 +4,7 @@ import Tagline from '../tagline'
 import Circle from './circle'
 import Links from './links'
 import Social from './social'
+import ContactInfo from './contact-info'
 import { drawerWidth, zIndex, animationDuration } from './config'
 
 export default function NavDrawer({ open }) {
@@ -33,7 +34,10 @@ export default function NavDrawer({ open }) {
 			<div css={styles.drawerContent}>
 				<Tagline />
 				<Links />
-				<Social />
+				<div css={styles.footer}>
+					<Social />
+					<ContactInfo />
+				</div>
 			</div>
 		</div>
 	)
@@ -53,6 +57,8 @@ const expand = keyframes`
 	}
 `
 
+const drawerPadding = 25
+
 const styles = {
 	circle: css`
 		position: absolute;
@@ -65,7 +71,7 @@ const styles = {
 		transition: transform ${animationDuration}, opacity ${animationDuration};
 		background-color: #362284;
 		background-image: linear-gradient(19deg, #362284 0%, #00b78d 100%);
-		padding: 25px;
+		padding: ${drawerPadding}px;
 		position: fixed;
 		top: 0;
 		bottom: 0;
@@ -77,5 +83,12 @@ const styles = {
 	activeDrawer: css`
 		transform: translate(0, 0);
 		opacity: 1;
+	`,
+	footer: css`
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: ${drawerPadding}px;
 	`,
 }

@@ -1,16 +1,19 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { FaFacebook } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
+import { secondaryColor } from '../../config/colors'
 
-export default function NavSocial() {
+export default function NavSocial({ css, ...props }) {
 	return (
-		<ul css={styles.container}>
+		<ul css={[styles.container, css]} {...props}>
 			<li>
 				<a
 					href='https://www.facebook.com/smarterlabsllc/'
 					target='_blank'
 					rel='noopener noreferrer'
 				>
-					Facebook
+					<FaFacebook />
 				</a>
 			</li>
 			<li>
@@ -19,7 +22,7 @@ export default function NavSocial() {
 					target='_blank'
 					rel='noopener noreferrer'
 				>
-					GitHub
+					<FaGithub />
 				</a>
 			</li>
 		</ul>
@@ -29,8 +32,21 @@ export default function NavSocial() {
 const styles = {
 	container: css`
 		list-style: none;
+		padding: 0;
+		margin: 0;
+		font-size: 1.5em;
 		li{
 			display: inline-block;
+			padding-left: 10px;
+			:first-of-type{
+				padding-left: 0;
+			}
+		}
+		a{
+			color: ${secondaryColor};
+			:hover{
+				color: #fff;
+			}
 		}
 	`,
 }
