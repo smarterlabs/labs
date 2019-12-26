@@ -32,7 +32,7 @@ export default function NavDrawer({ open }) {
 				</div>
 			)}
 			<div css={styles.drawerContent}>
-				<Tagline />
+				<Tagline css={css`font-size: 1.3em`} />
 				<Links />
 				<div css={styles.footer}>
 					<Social />

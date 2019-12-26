@@ -20,8 +20,7 @@ export default function HomePage({
 				</div>
 				<div css={[styles.fill, styles.gradient]} />
 				<div css={styles.content}>
-					{/* <Logo color='#fff' css={styles.logo} /> */}
-					<Tagline />
+					<Tagline css={styles.tagline} />
 					<Description css={styles.description} />
 				</div>
 			</section>
@@ -40,6 +39,12 @@ const styles = {
 		@media(min-width: 800px){
 			width: 600px;
 			padding-left: 60px;
+		}
+	`,
+	tagline: css`
+		font-size: 7vw;
+		@media(min-width: 800px){
+			font-size: 1.8em;
 		}
 	`,
 	description: css`

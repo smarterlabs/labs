@@ -3,7 +3,10 @@ import { css } from '@emotion/core'
 import { secondaryColor } from '../config/colors'
 
 export default function Tagline(props = {}){
-	const { css, ...attrs } = props
+	const {
+		css,
+		...attrs
+	} = props
 	let concatStyles = [styles.container]
 	if(css){
 		if(Array.isArray(css)){
@@ -28,11 +31,7 @@ export default function Tagline(props = {}){
 
 const styles = {
 	container: css`
-		font-size: 7vw;
 		display: block;
-		@media(min-width: 800px){
-			font-size: 1.8em;
-		}
 	`,
 	inner: css`
 		border-bottom: 2px solid ${secondaryColor};
