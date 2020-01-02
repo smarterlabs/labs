@@ -51,6 +51,11 @@ export default {
 			type: `array`,
 			of: [{ type: `string` }],
 		},
+		{
+			name: `featured`,
+			title: `Featured`,
+			type: `boolean`,
+		},
 	],
 
 	preview: {

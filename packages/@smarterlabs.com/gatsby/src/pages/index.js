@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Link from 'gatsby-link'
 import { css } from '@emotion/core'
 import BgImg from 'gatsby-background-image'
 import Layout from '../components/layouts/default'
@@ -24,11 +25,80 @@ export default function HomePage({
 					<Description css={styles.description} />
 				</div>
 			</section>
+			<div>
+				<section css={styles.featured}>
+					<Link to='/'>
+						<h2>Featured Work</h2>
+						<div>Goalrilla.com</div>
+						<div>View Project</div>
+					</Link>
+				</section>
+				<section css={styles.services}>
+					<h2>Services</h2>
+					<div>We do these things and do them well.</div>
+					<ul>
+						<li>
+							<h3>Digital</h3>
+							<ul>
+								<li>Website Development</li>
+								<li>Mobile Application Development</li>
+								<li>Desktop Application Development</li>
+								<li>UX/UI Design</li>
+								<li>Custom Branded Experiences</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Design</h3>
+							<ul>
+								<li>Website Development</li>
+								<li>Mobile Application Development</li>
+								<li>Desktop Application Development</li>
+								<li>UX/UI Design</li>
+								<li>Custom Branded Experiences</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Support</h3>
+							<ul>
+								<li>Website Development</li>
+								<li>Mobile Application Development</li>
+								<li>Desktop Application Development</li>
+								<li>UX/UI Design</li>
+								<li>Custom Branded Experiences</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Asset Creation</h3>
+							<ul>
+								<li>Website Development</li>
+								<li>Mobile Application Development</li>
+								<li>Desktop Application Development</li>
+								<li>UX/UI Design</li>
+								<li>Custom Branded Experiences</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</div>
 		</Layout>
 	)
 }
 
 const styles = {
+	services: css`
+		> ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			column-count: 2;
+			> li{
+				padding-top: 20px;
+			}
+		}
+		h3{
+			margin-top: 0;
+		}
+	`,
 	content: css`
 		padding: 30px;
 		position: absolute;
