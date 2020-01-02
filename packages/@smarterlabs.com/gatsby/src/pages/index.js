@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Link from 'gatsby-link'
 import { css } from '@emotion/core'
 import BgImg from 'gatsby-background-image'
 import Layout from '../components/layouts/default'
 // import Logo from '../components/logo'
 import Tagline from '../components/tagline'
 import Description from '../components/description'
+import Featured from '../components/featured-tile'
 
 export default function HomePage({
 	data: {
@@ -26,13 +26,9 @@ export default function HomePage({
 				</div>
 			</section>
 			<div>
-				<section css={styles.featured}>
-					<Link to='/'>
-						<h2>Featured Work</h2>
-						<div>Goalrilla.com</div>
-						<div>View Project</div>
-					</Link>
-				</section>
+				<div css={styles.featured}>
+					<Featured />
+				</div>
 				<section css={styles.services}>
 					<h2>Services</h2>
 					<div>We do these things and do them well.</div>
@@ -85,6 +81,9 @@ export default function HomePage({
 }
 
 const styles = {
+	featured: css`
+		height: 400px;
+	`,
 	services: css`
 		> ul{
 			list-style-type: none;
@@ -137,7 +136,7 @@ const styles = {
 	`,
 	img: css`
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		mix-blend-mode: multiply;
 	`,
 	gradient: css`
