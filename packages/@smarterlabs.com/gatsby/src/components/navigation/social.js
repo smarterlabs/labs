@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { FaFacebook } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa'
-import { secondaryColor } from '../../config/colors'
+import { primaryColor, secondaryColor } from '../../config/colors'
 
 export default function NavSocial({ css, ...props }) {
 	return (
@@ -45,7 +45,7 @@ const styles = {
 		a{
 			color: ${secondaryColor};
 			:hover{
-				color: #fff;
+				color: ${primaryColor};
 			}
 		}
 	`,

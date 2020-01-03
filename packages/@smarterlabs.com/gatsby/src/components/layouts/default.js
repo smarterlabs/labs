@@ -8,7 +8,8 @@ import {
 	white,
 	primaryColor,
 	primaryActiveColor,
-} from 'config/colors'
+} from '../../config/colors'
+import Footer from '../footer'
 import {
 	primaryFont,
 	secondaryFont,
@@ -38,6 +39,7 @@ export default function Layout({
 			<div css={styles.layout}>
 				<Navigation />
 				<main>{children}</main>
+				<Footer />
 			</div>
 		</>
 	)

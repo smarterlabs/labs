@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Link from 'gatsby-link'
 import BgImg from 'gatsby-background-image'
 import { css } from '@emotion/core'

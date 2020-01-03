@@ -1,23 +1,19 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import BgImg from 'gatsby-background-image'
 import Layout from '../components/layouts/default'
 // import Logo from '../components/logo'
 import Tagline from '../components/tagline'
 import Description from '../components/description'
 import Featured from '../components/featured-tile'
+import Services from '../components/services-tile'
+import BgImg from '../components/background-image'
 
-export default function HomePage({
-	data: {
-		cloudinary: { fluid },
-	},
-}){
+export default function HomePage(){
 	return (
 		<Layout>
 			<section css={styles.container}>
 				<div css={styles.fill}>
-					<BgImg fluid={fluid} css={styles.img} />
+					<BgImg />
 				</div>
 				<div css={[styles.fill, styles.gradient]} />
 				<div css={styles.content}>
@@ -29,52 +25,7 @@ export default function HomePage({
 				<div css={styles.featured}>
 					<Featured />
 				</div>
-				<section css={styles.services}>
-					<h2>Services</h2>
-					<div>We do these things and do them well.</div>
-					<ul>
-						<li>
-							<h3>Digital</h3>
-							<ul>
-								<li>Website Development</li>
-								<li>Mobile Application Development</li>
-								<li>Desktop Application Development</li>
-								<li>UX/UI Design</li>
-								<li>Custom Branded Experiences</li>
-							</ul>
-						</li>
-						<li>
-							<h3>Design</h3>
-							<ul>
-								<li>Website Development</li>
-								<li>Mobile Application Development</li>
-								<li>Desktop Application Development</li>
-								<li>UX/UI Design</li>
-								<li>Custom Branded Experiences</li>
-							</ul>
-						</li>
-						<li>
-							<h3>Support</h3>
-							<ul>
-								<li>Website Development</li>
-								<li>Mobile Application Development</li>
-								<li>Desktop Application Development</li>
-								<li>UX/UI Design</li>
-								<li>Custom Branded Experiences</li>
-							</ul>
-						</li>
-						<li>
-							<h3>Asset Creation</h3>
-							<ul>
-								<li>Website Development</li>
-								<li>Mobile Application Development</li>
-								<li>Desktop Application Development</li>
-								<li>UX/UI Design</li>
-								<li>Custom Branded Experiences</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
+				<Services />
 			</div>
 		</Layout>
 	)
@@ -83,20 +34,6 @@ export default function HomePage({
 const styles = {
 	featured: css`
 		height: 400px;
-	`,
-	services: css`
-		> ul{
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			column-count: 2;
-			> li{
-				padding-top: 20px;
-			}
-		}
-		h3{
-			margin-top: 0;
-		}
 	`,
 	content: css`
 		padding: 30px;
@@ -134,23 +71,8 @@ const styles = {
 		bottom: 0;
 		left: 0;
 	`,
-	img: css`
-		width: 100%;
-		height: 100%;
-		mix-blend-mode: multiply;
-	`,
 	gradient: css`
 		background-image: linear-gradient(30deg, #362284 0%, #00b78d 100%);
 		mix-blend-mode: multiply;
 	`,
 }
-
-export const query = graphql`
-	query HomePage {
-		cloudinary(publicId:{eq: "background_jgghh5"}){
-			fluid(maxWidth: 3000, quality: 90) {
-				...GatsbyCloudinaryFluid
-			}
-		}
-	}
-`
