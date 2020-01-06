@@ -12,13 +12,14 @@ export default function WorkTemplate({
 		sanityWork: work,
 	},
 }){
+	const img = work.image ? work.image.asset.fluid : null
 	return (
 		<Layout
 			title={work.title}
 			description={sanityToExcerpt(work._rawBody, 15)}
 		>
 			<Hero
-				image={work.image.asset.fluid}
+				image={img}
 				title={work.title}
 				subtitle={work.subtitle}
 				copy={`We’re building best-in-class lightweight & injectable responsive D2C Ecomm solutions that convert sales so you can focus on your brand, customer acquisition, and content.`}
@@ -39,7 +40,6 @@ export default function WorkTemplate({
 								<h3 css={styles.contentHeader}>Recognition</h3>
 								{work.recognition.map((award, index) => (
 									<div key={index}>
-										{console.log(award)}
 										<h4>{award.title}</h4>
 										<ul>
 											{award.awards.map((award, index) => (

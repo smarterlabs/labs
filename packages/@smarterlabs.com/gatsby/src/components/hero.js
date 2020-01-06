@@ -7,7 +7,9 @@ export default function Hero({ image, title, subtitle, copy }) {
 	return (
 		<section css={styles.container}>
 			<div css={styles.fill}>
-				<BgImg fluid={image} />
+				{image && (
+					<BgImg fluid={image} />
+				)}
 			</div>
 			<div css={styles.fill} />
 			<div css={styles.content}>
