@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import BgImg from '../components/background-image'
 import { gradient, secondaryColor } from '../config/colors'
+import scroll from '../img/scroll.svg'
 
 export default function Hero({ image, title, subtitle, copy }) {
 	return (
@@ -17,19 +18,42 @@ export default function Hero({ image, title, subtitle, copy }) {
 				<h2 css={styles.subtitle}>{subtitle}</h2>
 				<p css={styles.copy}>{copy}</p>
 			</div>
+			<img src={scroll} css={styles.scroll} />
 		</section>
 	)
 }
 
 const styles = {
+	scroll: css`
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 80px;
+	`,
 	title: css`
 		margin: 0;
 		color: #fff;
+		font-size: 1.6em;
+		@media(min-width: 800px){
+			font-size: 4vw;
+		}
+		@media(min-width: 1200px){
+			font-size: 3vw;
+		}
 	`,
 	subtitle: css`
 		margin: 0;
 		color: ${secondaryColor};
 		border-bottom: 2px solid ${secondaryColor};
+		font-style: italic;
+		font-size: 1em;
+		@media(min-width: 800px){
+			font-size: 2.2vw;
+		}
+		@media(min-width: 1200px){
+			font-size: 1.7vw;
+		}
 	`,
 	content: css`
 		padding: 30px;
@@ -45,6 +69,11 @@ const styles = {
 	`,
 	copy: css`
 		padding-left: 20px;
+		font-size: .8em;
+		line-height: 1.5em !important;
+		@media(min-width: 800px){
+			font-size: 1em;
+		}
 	`,
 	container: css`
 		width: 100%;
