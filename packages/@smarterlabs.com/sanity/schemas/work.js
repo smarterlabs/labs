@@ -14,6 +14,11 @@ export default {
 			type: `string`,
 		},
 		{
+			name: `subtitle`,
+			title: `Subtitle`,
+			type: `string`,
+		},
+		{
 			name: `slug`,
 			title: `URL Path`,
 			type: `slug`,

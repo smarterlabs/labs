@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
+import sanityToExcerpt from '@utils/sanity-to-excerpt'
 import Layout from '../components/layouts/default'
 import BgImg from '../components/background-image'
-import sanityToExcerpt from '@utils/sanity-to-excerpt'
 import SanityBlock from '../components/sanity-block'
 
 export default function WorkTemplate({
