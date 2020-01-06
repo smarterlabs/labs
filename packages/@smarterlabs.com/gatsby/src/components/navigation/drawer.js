@@ -6,6 +6,7 @@ import Links from './links'
 import Social from './social'
 import ContactInfo from './contact-info'
 import { drawerWidth, zIndex, animationDuration } from './config'
+import { gradient } from '../../config/colors'
 
 export default function NavDrawer({ open }) {
 	const [clickCoords, setClickCoords] = useState(false)
@@ -70,7 +71,7 @@ const styles = {
 		transform: translate(-${drawerWidth}px, 0);
 		transition: transform ${animationDuration}, opacity ${animationDuration};
 		background-color: #362284;
-		background-image: linear-gradient(19deg, #362284 0%, #00b78d 100%);
+		background-image: ${gradient};
 		padding: ${drawerPadding}px;
 		position: fixed;
 		top: 0;

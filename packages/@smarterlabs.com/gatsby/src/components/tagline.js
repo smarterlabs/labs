@@ -22,8 +22,8 @@ export default function Tagline(props = {}){
 	return (
 		<h1 css={concatStyles} {...attrs}>
 			<div css={styles.inner}>
-				<span css={styles.top}>Teaching Computers</span>
-				<span css={styles.bottom}>to Speak <i>Human</i></span>
+				<span css={styles.top}>Work Smarter</span>
+				<span css={styles.bottom}>not <i>Harder</i></span>
 			</div>
 		</h1>
 	)

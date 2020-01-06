@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { secondaryColor } from '../config/colors'
+import { secondaryColor, gradient } from '../config/colors'
 import ContactForm from './forms/contact-form'
 import Social from './navigation/social'
 import Contact from './navigation/contact-info'
@@ -26,7 +26,7 @@ export default function Footer() {
 
 const styles = {
 	footer: css`
-		background-image: linear-gradient(30deg, #362284 0%, #00b78d 100%);
+		background-image: ${gradient};
 		padding: 30px;
 	`,
 	content: css`

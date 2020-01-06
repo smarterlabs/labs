@@ -7,6 +7,7 @@ import Description from '../components/description'
 import Featured from '../components/featured-tile'
 import Services from '../components/services-tile'
 import BgImg from '../components/background-image-main'
+import { gradient } from '../config/colors'
 
 export default function HomePage(){
 	return (
@@ -72,7 +73,7 @@ const styles = {
 		left: 0;
 	`,
 	gradient: css`
-		background-image: linear-gradient(30deg, #362284 0%, #00b78d 100%);
+		background-image: ${gradient};
 		mix-blend-mode: multiply;
 	`,
 }
