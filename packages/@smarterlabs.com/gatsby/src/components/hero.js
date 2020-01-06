@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import BgImg from '../components/background-image'
-import { gradient, secondaryColor } from '../config/colors'
+import { secondaryColor } from '../config/colors'
 import scroll from '../img/scroll.svg'
 
 export default function Hero({ image, title, subtitle, copy }) {
@@ -86,9 +86,5 @@ const styles = {
 		right: 0;
 		bottom: 0;
 		left: 0;
-	`,
-	gradient: css`
-		background-image: ${gradient};
-		mix-blend-mode: multiply;
 	`,
 }

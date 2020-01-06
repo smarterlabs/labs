@@ -61,7 +61,7 @@ export default function ContactForm(){
 							type='submit'
 							disabled={props.isSubmitting}
 						>
-							Submit
+							get in touch
 						</Button>
 					</div>
 				</>}
