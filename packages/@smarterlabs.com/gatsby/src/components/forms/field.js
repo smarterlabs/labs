@@ -85,6 +85,7 @@ const styles = {
 		transform: scale(1) translate(0, 26px);
 		transform-origin: 0;
 		transition: transform .2s;
+		color: #fff;
 	`,
 	movedLabel: css`
 		transform: scale(.8) translate(0, 0);
@@ -101,7 +102,7 @@ const styles = {
 			height: 2px;
 		}
 		:before{
-			border-bottom: 1px solid #aaa;
+			border-bottom: 1px solid #fff;
 		}
 		:after{
 			border-bottom: 2px solid ${primaryColor};

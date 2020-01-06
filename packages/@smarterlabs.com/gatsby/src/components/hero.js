@@ -9,7 +9,7 @@ export default function Hero({ image, title, subtitle, copy }) {
 			<div css={styles.fill}>
 				<BgImg fluid={image} />
 			</div>
-			<div css={[styles.fill, styles.gradient]} />
+			<div css={styles.fill} />
 			<div css={styles.content}>
 				<h1 css={styles.title}>{title}</h1>
 				<h2 css={styles.subtitle}>{subtitle}</h2>
