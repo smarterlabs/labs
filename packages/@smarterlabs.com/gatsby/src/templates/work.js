@@ -40,8 +40,8 @@ export default function WorkTemplate({
 								<h3 css={styles.contentHeader}>Recognition</h3>
 								{work.recognition.map((award, index) => (
 									<div key={index}>
-										<h4>{award.title}</h4>
-										<ul>
+										<h4 css={styles.awardHeader}>{award.title}</h4>
+										<ul css={styles.awardList}>
 											{award.awards.map((award, index) => (
 												<li key={index}>{award}</li>
 											))}
@@ -59,24 +59,58 @@ export default function WorkTemplate({
 }
 
 const styles = {
+	awardHeader: css`
+		margin: 10px 0 5px 0;
+		font-size: 1.3em;
+		font-weight: normal;
+	`,
+	awardList: css`
+		margin: 0;
+	`,
 	content: css`
 		background-image: ${gradient};
 		padding: 30px;
 		color: #fff;
+		font-size: .8em;
+		@media(min-width: 1024px){
+			padding: 30px 100px;
+			> *{
+				float: left;
+				width: 50%;
+			}
+			:after{
+				display: block;
+				content: '';
+				clear: both;
+			}
+		}
 	`,
 	topContent: css`
-		> div{
-			width: 50%;
-			float: left;
+		ul{
+			list-style-type: none;
+			padding: 0;
 		}
-		:after{
-			display: block;
-			content: '';
-			clear: both;
+		@media(min-width: 600px){
+			> div{
+				width: 50%;
+				float: left;
+			}
+			:after{
+				display: block;
+				content: '';
+				clear: both;
+			}
+		}
+		@media(min-width: 1024px){
+			> div{
+				float: none;
+				width: 100%;
+			}
 		}
 	`,
 	contentHeader: css`
 		margin: 0;
+		font-size: 2em;
 	`,
 }
 
