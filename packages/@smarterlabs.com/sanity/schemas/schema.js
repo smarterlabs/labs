@@ -14,6 +14,7 @@ import captionedImage from './captioned-image'
 import widget from './widget'
 import person from './person'
 import work from './work'
+import award from './award'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,5 +37,6 @@ export default createSchema({
 		blockContent,
 		captionedImage,
 		widget,
+		award,
 	]),
 })

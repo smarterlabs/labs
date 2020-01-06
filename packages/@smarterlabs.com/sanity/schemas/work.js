@@ -57,7 +57,8 @@ export default {
 		{
 			name: `recognition`,
 			title: `Recognition`,
-			type: `blockContent`,
+			type: `array`,
+			of: [{ type: `award` }],
 		},
 		{
 			title: `Contributors`,
