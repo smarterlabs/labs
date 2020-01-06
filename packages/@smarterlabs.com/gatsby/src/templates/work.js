@@ -4,8 +4,11 @@ import { css } from '@emotion/core'
 import sanityToExcerpt from '@utils/sanity-to-excerpt'
 import Layout from '../components/layouts/default'
 import SanityBlock from '../components/sanity-block'
-import { gradient } from '../config/colors'
+import { secondaryColor, gradient } from '../config/colors'
 import Hero from '../components/hero'
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import AllWork from '../components/all-work'
 
 export default function WorkTemplate({
 	data: {
@@ -54,11 +57,20 @@ export default function WorkTemplate({
 				)}
 				<SanityBlock body={work._rawBody} />
 			</section>
+			<section css={styles.related}>
+				<AllWork exclude={work.id} />
+			</section>
 		</Layout>
 	)
 }
 
 const styles = {
+	related: css`
+		padding: 30px;
+		.slick-prev:before, .slick-next:before{
+			color: ${secondaryColor} !important;
+		}
+	`,
 	awardHeader: css`
 		margin: 10px 0 5px 0;
 		font-size: 1.3em;
@@ -119,6 +131,7 @@ export const query = graphql`
 		sanityWork(
 			id: { eq: $id }
 		){
+			id
 			title
 			subtitle
 			tags
@@ -133,6 +146,23 @@ export const query = graphql`
 				asset {
 					fluid(maxWidth: 3000) {
 						...GatsbySanityImageFluid
+					}
+				}
+			}
+		}
+		allSanityWork{
+			edges{
+				node{
+					title
+					slug{
+						current
+					}
+					image{
+						asset {
+							fluid(maxWidth: 300) {
+								...GatsbySanityImageFluid
+							}
+						}
 					}
 				}
 			}
