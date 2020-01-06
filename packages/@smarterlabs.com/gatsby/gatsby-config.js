@@ -23,7 +23,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-remove-trailing-slashes`,
 		`generic-pages`,
-		// `work-pages`,
+		`work-pages`,
 		{
 			resolve: `@smarterlabs/gatsby-source-cloudinary`,
 			options: {

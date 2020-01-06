@@ -40,6 +40,21 @@ export default {
 			calendarTodayLabel: `Today`,
 		},
 		{
+			name: `body`,
+			title: `Body`,
+			type: `blockContent`,
+		},
+		{
+			name: `scope`,
+			title: `Scope`,
+			type: `blockContent`,
+		},
+		{
+			name: `recognition`,
+			title: `Recognition`,
+			type: `blockContent`,
+		},
+		{
 			title: `Contributors`,
 			name: `contributors`,
 			type: `array`,

@@ -1,40 +1,41 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from '../components/layouts/default'
-// import Logo from '../components/logo'
-import Tagline from '../components/tagline'
-import Description from '../components/description'
-import Featured from '../components/featured-tile'
-import Services from '../components/services-tile'
-import BgImg from '../components/background-image-main'
+import BgImg from '../components/background-image'
+import sanityToExcerpt from '@utils/sanity-to-excerpt'
+import SanityBlock from '../components/sanity-block'
 
-export default function HomePage(){
+export default function WorkTemplate({
+	data: {
+		sanityWork: work,
+	},
+}){
+	console.log(work)
 	return (
-		<Layout>
+		<Layout
+			title={work.title}
+			description={sanityToExcerpt(work._rawBody, 15)}
+		>
 			<section css={styles.container}>
 				<div css={styles.fill}>
-					<BgImg />
+					<BgImg fluid={work.image.image.asset.fluid} />
 				</div>
 				<div css={[styles.fill, styles.gradient]} />
 				<div css={styles.content}>
-					<Tagline css={styles.tagline} />
-					<Description css={styles.description} />
+					<h1>{work.title}</h1>
+					<h2>{work.subtitle}</h2>
 				</div>
 			</section>
-			<div>
-				<div css={styles.featured}>
-					<Featured />
-				</div>
-				<Services />
-			</div>
+			<section>
+				<SanityBlock body={work._rawBody} />
+			</section>
 		</Layout>
 	)
 }
 
 const styles = {
-	featured: css`
-		height: 400px;
-	`,
+
 	content: css`
 		padding: 30px;
 		position: absolute;
@@ -76,3 +77,26 @@ const styles = {
 		mix-blend-mode: multiply;
 	`,
 }
+
+export const query = graphql`
+	query WorkTemplate($id: String!) {
+		sanityWork(
+			id: { eq: $id }
+		){
+			title
+			subtitle
+			tags
+			_rawBody
+			_rawScope
+			_rawRecognition
+			image{
+				caption
+				asset {
+					fluid(maxWidth: 3000) {
+						...GatsbySanityImageFluid
+					}
+				}
+			}
+		}
+	}
+`

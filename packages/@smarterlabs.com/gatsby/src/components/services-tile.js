@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import BgImg from './background-image'
+import BgImg from './background-image-main'
 import { secondaryColor } from '../config/colors'
 
 function ServicesBlock({ title, list }){
