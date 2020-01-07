@@ -25,6 +25,7 @@ export default function WorkTemplate({
 				image={img}
 				title={work.title}
 				subtitle={work.subtitle}
+				link={work.link}
 				copy={`We’re building best-in-class lightweight & injectable responsive D2C Ecomm solutions that convert sales so you can focus on your brand, customer acquisition, and content.`}
 			/>
 			<section css={styles.content}>
@@ -137,6 +138,7 @@ export const query = graphql`
 			tags
 			_rawBody
 			_rawScope
+			link
 			recognition{
 				title
 				awards

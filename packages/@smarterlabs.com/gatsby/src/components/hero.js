@@ -3,9 +3,10 @@ import { css } from '@emotion/core'
 import BgImg from '../components/background-image'
 import { secondaryColor } from '../config/colors'
 import scroll from '../img/scroll.svg'
+import goto from '../img/goto.svg'
 import Lockup from './lockup'
 
-export default function Hero({ image, title, subtitle, copy }) {
+export default function Hero({ image, title, subtitle, copy, link }) {
 	return (
 		<section css={styles.container}>
 			<div css={styles.fill}>
@@ -15,6 +16,9 @@ export default function Hero({ image, title, subtitle, copy }) {
 			</div>
 			<div css={styles.fill} />
 			<div css={styles.content}>
+				<a href={link} target='_blank' rel='noopener noreferrer' css={styles.link}>
+					<img src={goto} />
+				</a>
 				<Lockup
 					title={title}
 					subtitle={subtitle}
@@ -27,6 +31,16 @@ export default function Hero({ image, title, subtitle, copy }) {
 }
 
 const styles = {
+	link: css`
+		width: 60px;
+		display: block;
+		@media(min-width: 1024px){
+			width: 100px;
+			position: absolute;
+			right: -100px;
+			top: 50px;
+		}
+	`,
 	scroll: css`
 		position: absolute;
 		bottom: 20px;
