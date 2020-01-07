@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { useStaticQuery, graphql } from 'gatsby'
+import Link from 'gatsby-link'
 import { Helmet } from 'react-helmet'
 import Navigation from '../navigation'
 import { navBarWidth } from '../navigation/config'
@@ -10,6 +11,7 @@ import {
 	primaryActiveColor,
 } from '../../config/colors'
 import Footer from '../footer'
+import Logo from '../logo'
 import {
 	primaryFont,
 	secondaryFont,
@@ -22,6 +24,7 @@ export default function Layout({
 	title,
 	description,
 	children,
+	logoColor = `#fff`,
 }) {
 	const { settings } = useStaticQuery(query)
 	return (
@@ -38,6 +41,9 @@ export default function Layout({
 			</Helmet>
 			<div css={styles.layout}>
 				<Navigation />
+				<Link to='/' css={styles.logo}>
+					<Logo color={logoColor} />
+				</Link>
 				<main>{children}</main>
 				<Footer />
 			</div>
@@ -46,6 +52,17 @@ export default function Layout({
 }
 
 const styles = {
+	logo: css`
+		position: absolute;
+		width: 500px;
+		top: 100px;
+		left: 120px;
+		z-index: 1;
+		display: none;
+		@media(min-width: 1200px){
+			display: block;
+		}
+	`,
 	layout: css`
 		padding-left: ${navBarWidth}px;
 		min-height: 100vh;

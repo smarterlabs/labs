@@ -82,6 +82,9 @@ const styles = {
 		@media(min-width: 1200px){
 			font-size: 3.5vw;
 		}
+		@media(min-width: 1600px){
+			font-size: 3.2em;
+		}
 	`,
 	description: css`
 		padding-left: 20px;

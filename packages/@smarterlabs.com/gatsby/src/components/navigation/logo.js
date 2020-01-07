@@ -27,6 +27,9 @@ const styles = {
 		transform: rotate(-90deg);
 		width: ${logoSize}px;
 		height: ${logoSize}px;
+		@media(min-width: 1200px){
+			display: none;
+		}
 		img{
 			display: block;
 			width: 100%;
