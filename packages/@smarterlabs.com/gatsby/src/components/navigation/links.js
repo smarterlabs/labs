@@ -1,32 +1,27 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Link from 'gatsby-link'
 import { primaryColor } from '../../config/colors'
 
 export default function NavLinks() {
+	const { sanityNavigation: { links } } = useStaticQuery(graphql`
+		query NavLinks{
+			sanityNavigation(title: {eq: "Main"}){
+				links: linkObject{
+					title
+					link
+				}
+			}
+		}
+	`)
 	return (
 		<ul css={styles.links}>
-			<li>
-				<Link to='/design'>Design</Link>
-			</li>
-			<li>
-				<Link to='/development'>Web & App Development</Link>
-			</li>
-			<li>
-				<Link to='/solutions'>Solutions</Link>
-			</li>
-			<li>
-				<Link to='/consulting'>Consulting</Link>
-			</li>
-			<li>
-				<Link to='/work'>Work</Link>
-			</li>
-			<li>
-				<Link to='/about-us'>About Us</Link>
-			</li>
-			<li>
-				<Link to='/contact'>Contact</Link>
-			</li>
+			{links.map(({ title, link }, index) => (
+				<li key={index}>
+					<Link to={link}>{title}</Link>
+				</li>
+			))}
 		</ul>
 	)
 }
