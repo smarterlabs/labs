@@ -58,7 +58,7 @@ const styles = {
 		opacity: .5;
 		@media(min-width: 1200px){
 			width: 50%;
-			height: 130%;
+			height: 150%;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -80,10 +80,31 @@ const styles = {
 		list-style-type: none;
 		margin: 0;
 		padding: 30px;
-		li{
+		> li{
 			margin-top: 30px;
 			:first-of-type{
 				margin-top: 0;
+			}
+		}
+		@media(min-width: 1200px){
+			> li{
+				width: 50%;
+				:nth-of-type(2){
+					margin-top: 100px;
+				}
+				:nth-of-type(2n-1){
+					float: left;
+					padding-right: 15px;
+				}
+				:nth-of-type(2n){
+					float: right;
+					padding-left: 15px;
+				}
+			}
+			:after{
+				content: '';
+				display: block;
+				clear: both;
 			}
 		}
 	`,
