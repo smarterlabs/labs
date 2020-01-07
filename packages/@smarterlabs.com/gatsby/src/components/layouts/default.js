@@ -54,9 +54,9 @@ export default function Layout({
 const styles = {
 	logo: css`
 		position: absolute;
-		width: 500px;
-		top: 100px;
-		left: 120px;
+		width: 300px;
+		top: 60px;
+		left: 90px;
 		z-index: 1;
 		display: none;
 		@media(min-width: 1200px){

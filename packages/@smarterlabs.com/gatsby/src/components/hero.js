@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 import BgImg from '../components/background-image'
 import { secondaryColor } from '../config/colors'
 import scroll from '../img/scroll.svg'
+import Lockup from './lockup'
 
 export default function Hero({ image, title, subtitle, copy }) {
 	return (
@@ -14,9 +15,11 @@ export default function Hero({ image, title, subtitle, copy }) {
 			</div>
 			<div css={styles.fill} />
 			<div css={styles.content}>
-				<h1 css={styles.title}>{title}</h1>
-				<h2 css={styles.subtitle}>{subtitle}</h2>
-				<p css={styles.copy}>{copy}</p>
+				<Lockup
+					title={title}
+					subtitle={subtitle}
+					copy={copy}
+				/>
 			</div>
 			<img src={scroll} css={styles.scroll} />
 		</section>

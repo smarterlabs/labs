@@ -71,7 +71,6 @@ const styles = {
 		color: #fff;
 		@media(min-width: 800px){
 			width: 600px;
-			padding-left: 60px;
 		}
 	`,
 	tagline: css`
@@ -83,7 +82,7 @@ const styles = {
 			font-size: 3.5vw;
 		}
 		@media(min-width: 1600px){
-			font-size: 3.2em;
+			font-size: 4em;
 		}
 	`,
 	description: css`
