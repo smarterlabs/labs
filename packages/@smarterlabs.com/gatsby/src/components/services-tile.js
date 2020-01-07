@@ -95,13 +95,19 @@ const styles = {
 	header: css`
 		margin: 0;
 		font-size: 2.0em;
+		@media(min-width: 1200px){
+			font-size: 2.5em;
+		}
 	`,
 	subheader: css`
 		color: ${secondaryColor};
 		font-weight: normal;
 		font-style: italic;
 		font-size: 1.4em;
-		margin-bottom: 0;
+		margin: 0;
 		border-bottom: 2px solid ${secondaryColor};
+		@media(min-width: 1200px){
+			font-size: 2.2em;
+		}
 	`,
 }

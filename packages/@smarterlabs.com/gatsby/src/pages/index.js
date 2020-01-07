@@ -22,7 +22,7 @@ export default function HomePage(){
 					<Description css={styles.description} />
 				</div>
 			</section>
-			<div>
+			<div css={styles.row}>
 				<div css={styles.featured}>
 					<Featured />
 				</div>
@@ -33,8 +33,34 @@ export default function HomePage(){
 }
 
 const styles = {
+	row: css`
+		@media(min-width: 1200px){
+			position: relative;
+			:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			> *{
+				:nth-of-type(1){
+					width: 60%;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+				}
+				:nth-of-type(2){
+					width: 40%;
+					float: right;
+				}
+			}
+		}
+	`,
 	featured: css`
 		height: 400px;
+		@media(min-width: 1200px){
+			height: 100%;
+		}
 	`,
 	content: css`
 		padding: 30px;
@@ -52,6 +78,9 @@ const styles = {
 		font-size: 7vw;
 		@media(min-width: 800px){
 			font-size: 1.8em;
+		}
+		@media(min-width: 1200px){
+			font-size: 3.5vw;
 		}
 	`,
 	description: css`
