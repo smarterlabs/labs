@@ -15,6 +15,8 @@ import widget from './widget'
 import person from './person'
 import work from './work'
 import award from './award'
+import link from './link'
+import navigation from './navigation'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,6 +32,7 @@ export default createSchema({
 		person,
 		post,
 		comment,
+		navigation,
 		siteSettings,
 
 		// When added to this list, object types can be used as
@@ -38,5 +41,6 @@ export default createSchema({
 		captionedImage,
 		widget,
 		award,
+		link,
 	]),
 })
