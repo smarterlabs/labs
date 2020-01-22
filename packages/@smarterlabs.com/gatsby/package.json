@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "build": "run-p cms netlify-config && NODE_ENV=production npx dotenv -e ../../../.env -e ../.env -- npx gatsby build --verbose",
+    "build": "NODE_ENV=production npx dotenv -e ../../../.env -e ../.env -- npx gatsby build --verbose",
+    "postbuild": "run-p cms netlify-config",
     "clean": "gatsby clean",
     "cms": "cp -a ../sanity/dist public/admin",
     "deploy": "yarn run deploy:staging",
