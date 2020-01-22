@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "prebuild": "run-p cms netlify-config",
     "build": "NODE_ENV=production npx dotenv -e ../../../.env -e ../.env -- npx gatsby build --verbose",
     "clean": "gatsby clean",
     "cms": "cp -a ../sanity/dist public/admin",
