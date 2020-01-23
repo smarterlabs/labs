@@ -46,5 +46,13 @@ const styles = {
 		border: 0;
 		padding: 7px;
 		margin: 0;
+		position: absolute;
+		top: 300px;
+		cursor: pointer;
+		:active{
+			img{
+				transform: rotate(-45deg);
+			}
+		}
 	`,
 }
