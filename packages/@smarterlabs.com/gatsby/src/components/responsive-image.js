@@ -42,10 +42,10 @@ export default function ResponsiveImage({
 			resizeEvents.splice(resizeEvents.indexOf(resize), 1)
 		}
 	}, [])
-
 	return (
 		<InView once>
 			{inView => {
+				console.log(height)
 				return (
 					<div
 						style={{ width }}

@@ -6,7 +6,7 @@ import Responsive from './responsive-image'
 
 const builder = imageUrlBuilder(api)
 
-export default function NetlifyImage({
+export default function SanityImage({
 	src = {},
 	alt,
 	...props
@@ -24,10 +24,10 @@ export default function NetlifyImage({
 	if(height) props.height = height
 	return (
 		<Responsive {...props}>
-			{(w, h) => {
+			{(w) => {
 				let finalSrc = builder.image(_ref || _id)
 				if(w) finalSrc = finalSrc.width(w)
-				if(h) finalSrc = finalSrc.height(h)
+				// if(h) finalSrc = finalSrc.height(h)
 				finalSrc = finalSrc.url()
 				return (
 					<img
