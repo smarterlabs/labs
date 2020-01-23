@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react'
 import { css, keyframes } from '@emotion/core'
-import Tagline from '../tagline'
+// import Tagline from '../tagline'
 import Circle from './circle'
 import Links from './links'
 import Social from './social'
 import ContactInfo from './contact-info'
+import Logo from '../logo'
 import { drawerWidth, zIndex, animationDuration } from './config'
 import { gradient } from '../../config/colors'
 
@@ -33,7 +34,8 @@ export default function NavDrawer({ open }) {
 				</div>
 			)}
 			<div css={styles.drawerContent}>
-				<Tagline css={styles.tagline} />
+				{/* <Tagline css={styles.tagline} /> */}
+				<Logo color='#fff' />
 				<Links />
 				<div css={styles.footer}>
 					<Social />
@@ -61,9 +63,9 @@ const expand = keyframes`
 const drawerPadding = 25
 
 const styles = {
-	tagline: css`
-		font-size: 1.3em;
-	`,
+	// tagline: css`
+	// 	font-size: 1.3em;
+	// `,
 	circle: css`
 		position: absolute;
 		z-index: -1;

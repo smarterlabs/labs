@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Link from 'gatsby-link'
-import { primaryColor } from '../../config/colors'
+import { primaryColor, secondaryColor } from '../../config/colors'
 
 export default function NavLinks() {
 	const { sanityNavigation: { links } } = useStaticQuery(graphql`
@@ -35,7 +35,7 @@ const styles = {
 			margin-top: 10px;
 		}
 		a{
-			color: #fff;
+			color: ${secondaryColor};
 			display: block;
 			:hover, :active{
 				color: ${primaryColor};
