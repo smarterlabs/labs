@@ -41,6 +41,10 @@ const serializers = {
 				<SanityImg src={node} />
 			)
 		},
+		youtubeEmbed(arg){
+			console.log(arg)
+			return <div>Video</div>
+		},
 	},
 }
 
