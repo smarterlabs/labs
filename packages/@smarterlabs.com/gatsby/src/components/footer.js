@@ -12,7 +12,7 @@ export default function Footer() {
 			<div css={styles.content}>
 				<div css={styles.row}>
 					<div css={styles.form}>
-						<h1 css={styles.header}>Questions?<br />We'll respond withini 24 hours!</h1>
+						<h1 css={styles.header}>Questions?<br />We'll respond within 24 hours!</h1>
 						<ContactForm />
 					</div>
 					<div css={styles.right}>

@@ -74,5 +74,6 @@ const styles = {
 	inputBlock: css`
 		display: block;
 		margin-top: 20px;
+		text-align: center;
 	`,
 }
