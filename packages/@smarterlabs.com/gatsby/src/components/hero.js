@@ -16,9 +16,11 @@ export default function Hero({ image, title, subtitle, copy, link }) {
 			</div>
 			<div css={[styles.fill, styles.gradient]} />
 			<div css={styles.content}>
-				<a href={link} target='_blank' rel='noopener noreferrer' css={styles.link}>
-					<img src={goto} />
-				</a>
+				{!!link && (
+					<a href={link} target='_blank' rel='noopener noreferrer' css={styles.link}>
+						<img src={goto} />
+					</a>
+				)}
 				<Lockup
 					title={title}
 					subtitle={subtitle}
