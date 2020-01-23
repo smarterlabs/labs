@@ -15,6 +15,7 @@ export default function NavLinks() {
 			}
 		}
 	`)
+	console.log(links)
 	return (
 		<ul css={styles.links}>
 			{links.map(({ title, link }, index) => (
