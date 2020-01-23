@@ -39,6 +39,7 @@ const styles = {
 	activeBackdrop: css`
 		visibility: visible;
 		opacity: 1;
+		mix-blend-mode: multiply;
 	`,
 	button: css`
 		background: none;
