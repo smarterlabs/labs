@@ -52,9 +52,12 @@ export default function ResponsiveImage({
 						css={styles.container}
 						ref={containerEl}
 					>
-						<Placeholder ratio={ratio || [width, height]}>
-							{!!w && inView && children(w, h)}
-						</Placeholder>
+						{!!height && !!width && (
+							<Placeholder ratio={ratio || [width, height]}>
+								{!!w && inView && children(w, h)}
+							</Placeholder>
+						)}
+						{(!height || !width) && w && inView && children(w, h)}
 					</div>
 				)
 			}}

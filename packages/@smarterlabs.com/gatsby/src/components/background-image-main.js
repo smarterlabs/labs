@@ -13,7 +13,6 @@ export default function BackgroundImage({ children, css, ...props }) {
 			}
 		}
 	`)
-	console.log(data)
 	const { cloudinary: { fluid } } = data
 	return (
 		<BgImg fluid={fluid} css={[styles.img, css]} {...props}>{children}</BgImg>

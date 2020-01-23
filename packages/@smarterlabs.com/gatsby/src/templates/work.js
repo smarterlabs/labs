@@ -39,7 +39,7 @@ export default function WorkTemplate({
 								</div>
 							</div>
 						)}
-						{work.recognition && (
+						{!!work.recognition.length && (
 							<div css={styles.recognition}>
 								<h3 css={styles.contentHeader}>Recognition</h3>
 								{work.recognition.map((award, index) => (

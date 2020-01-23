@@ -7,7 +7,11 @@ import Responsive from './responsive-image'
 const builder = imageUrlBuilder(api)
 
 export default function NetlifyImage({
-	src: {
+	src = {},
+	alt,
+	...props
+}) {
+	const {
 		caption,
 		width,
 		height,
@@ -15,19 +19,16 @@ export default function NetlifyImage({
 			_ref,
 			_id,
 		} = {},
-	} = {},
-	alt,
-	...props
-}) {
+	} = src
 	if(width) props.width = width
 	if(height) props.height = height
 	return (
 		<Responsive {...props}>
 			{(w, h) => {
-				const finalSrc = builder.image(_ref || _id)
-					.width(w)
-					.height(h)
-					.url()
+				let finalSrc = builder.image(_ref || _id)
+				if(w) finalSrc = finalSrc.width(w)
+				if(h) finalSrc = finalSrc.height(h)
+				finalSrc = finalSrc.url()
 				return (
 					<img
 						src={finalSrc}
