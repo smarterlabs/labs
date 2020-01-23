@@ -1,6 +1,5 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import BgImg from './background-image-main'
 import { secondaryColor } from '../config/colors'
 
 function ServicesBlock({ title, list }){
@@ -18,7 +17,7 @@ function ServicesBlock({ title, list }){
 
 export default function ServicesTile(){
 	return (
-		<BgImg css={styles.container}>
+		<div css={styles.container}>
 			<section css={styles.services}>
 				<h2 css={styles.header}>Services</h2>
 				<h3 css={styles.subheader}>We do these things and do them well.</h3>
@@ -65,7 +64,7 @@ export default function ServicesTile(){
 					/>
 				</ul>
 			</section>
-		</BgImg>
+		</div>
 	)
 }
 

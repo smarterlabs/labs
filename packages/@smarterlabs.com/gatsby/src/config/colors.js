@@ -14,5 +14,5 @@ module.exports = {
 	lightErrorColor: color(errorColor).lighten(.6).rgb().string(),
 	successColor,
 	lightSuccessColor: color(successColor).lighten(1.2).rgb().string(),
-	gradient: `linear-gradient(30deg, #362284 0%, #00b78d 100%);`,
+	gradient: `linear-gradient(30deg, #3D1283 0%, #00C78D 100%);`,
 }
