@@ -33,7 +33,7 @@ export default function NavDrawer({ open }) {
 				</div>
 			)}
 			<div css={styles.drawerContent}>
-				<Tagline css={css`font-size: 1.3em`} />
+				<Tagline css={styles.tagline} />
 				<Links />
 				<div css={styles.footer}>
 					<Social />
@@ -61,6 +61,9 @@ const expand = keyframes`
 const drawerPadding = 25
 
 const styles = {
+	tagline: css`
+		font-size: 1.3em;
+	`,
 	circle: css`
 		position: absolute;
 		z-index: -1;
