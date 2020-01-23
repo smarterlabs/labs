@@ -79,6 +79,7 @@ const styles = {
 		position: fixed;
 		top: 0;
 		bottom: 0;
+		/* left: 0; */
 		z-index: ${zIndex + 2};
 		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 		opacity: 0;

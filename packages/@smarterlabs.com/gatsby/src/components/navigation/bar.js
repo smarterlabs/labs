@@ -9,7 +9,7 @@ import {
 
 export default function Navigation({ open, toggleNav }) {
 	return (
-		<div css={styles.bar} onMouseEnter={() => toggleNav(true, true)}>
+		<div css={[styles.bar, open && styles.openBar]} onMouseEnter={() => toggleNav(true, true)}>
 			<Logo />
 			<button onClick={toggleNav} css={styles.button}>
 				<img src={hamburger} css={[styles.burger, open && styles.openBurger]} />
@@ -39,6 +39,9 @@ const styles = {
 		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 		background: #fff;
 		z-index: ${zIndex + 2};
+	`,
+	openBar: css`
+		/* transform: translate(-${navBarWidth}px, 0); */
 	`,
 	button: css`
 		background: none;
