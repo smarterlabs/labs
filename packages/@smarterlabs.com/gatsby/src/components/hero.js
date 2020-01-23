@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import BgImg from '../components/background-image'
-import { secondaryColor } from '../config/colors'
+import { secondaryColor, gradient } from '../config/colors'
 import scroll from '../img/scroll.svg'
 import goto from '../img/goto.svg'
 import Lockup from './lockup'
@@ -14,7 +14,7 @@ export default function Hero({ image, title, subtitle, copy, link }) {
 					<BgImg fluid={image} />
 				)}
 			</div>
-			<div css={styles.fill} />
+			<div css={[styles.fill, styles.gradient]} />
 			<div css={styles.content}>
 				<a href={link} target='_blank' rel='noopener noreferrer' css={styles.link}>
 					<img src={goto} />
@@ -31,6 +31,10 @@ export default function Hero({ image, title, subtitle, copy, link }) {
 }
 
 const styles = {
+	gradient: css`
+		background-image: ${gradient};
+		mix-blend-mode: multiply;
+	`,
 	link: css`
 		width: 60px;
 		display: block;
