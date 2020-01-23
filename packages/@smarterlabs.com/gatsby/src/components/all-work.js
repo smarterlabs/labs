@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick"
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
+import Placeholder from './placeholder'
 
 export default function AllWork({ exclude }) {
 	const { allSanityWork: { edges } } = useStaticQuery(graphql`
@@ -72,7 +73,11 @@ export default function AllWork({ exclude }) {
 						<div css={styles.slide} key={index}>
 							<Link to={`/${node.slug.current}`}>
 								{node.image && (
-									<Img fluid={node.image.asset.fluid} />
+									<Placeholder css={styles.image} ratio={[16, 9]}>
+										{!!node.image && (
+											<Img fluid={node.image.asset.fluid} alt={node.title} />
+										)}
+									</Placeholder>
 								)}
 								<div css={styles.title}>{node.title}</div>
 								<div css={styles.view}>View Project</div>

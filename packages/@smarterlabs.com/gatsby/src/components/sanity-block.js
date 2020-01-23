@@ -37,7 +37,9 @@ const serializers = {
 		// },
 		captionedImage(arg){
 			const { node } = arg
-			return <SanityImg src={node} />
+			return(
+				<SanityImg src={node} />
+			)
 		},
 	},
 }

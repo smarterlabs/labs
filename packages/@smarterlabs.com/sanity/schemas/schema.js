@@ -11,6 +11,7 @@ import siteSettings from './site-settings'
 
 import blockContent from './block-content'
 import captionedImage from './captioned-image'
+import youtubeEmbed from './youtube-embed'
 import widget from './widget'
 import person from './person'
 import work from './work'
@@ -39,6 +40,7 @@ export default createSchema({
 		// { type: 'typename' } in other document schemas
 		blockContent,
 		captionedImage,
+		youtubeEmbed,
 		widget,
 		award,
 		link,

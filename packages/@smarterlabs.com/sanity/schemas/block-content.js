@@ -59,6 +59,10 @@ export default {
 			options: { hotspot: true },
 		},
 		{
+			type: `youtubeEmbed`,
+			options: { hotspot: true },
+		},
+		{
 			type: `widget`,
 		},
 	],
