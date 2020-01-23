@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { css, keyframes } from '@emotion/core'
+import Link from 'gatsby-link'
 // import Tagline from '../tagline'
 import Circle from './circle'
 import Links from './links'
@@ -35,7 +36,9 @@ export default function NavDrawer({ open }) {
 			)}
 			<div css={styles.drawerContent}>
 				{/* <Tagline css={styles.tagline} /> */}
-				<Logo color='#fff' />
+				<Link to='/'>
+					<Logo color='#fff' />
+				</Link>
 				<Links />
 				<div css={styles.footer}>
 					<Social />

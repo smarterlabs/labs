@@ -45,7 +45,6 @@ export default function ResponsiveImage({
 	return (
 		<InView once>
 			{inView => {
-				console.log(height)
 				return (
 					<div
 						style={{ width }}
