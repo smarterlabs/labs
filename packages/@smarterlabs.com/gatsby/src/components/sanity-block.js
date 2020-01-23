@@ -44,7 +44,7 @@ const serializers = {
 		},
 		youtubeEmbed(arg){
 			return(
-				<YouTube id={arg.node.id} />
+				<YouTube id={arg.node.id} appendSrc='?modestbranding=1&rel=0&showInfo=0&autohide=1' />
 			)
 		},
 	},
