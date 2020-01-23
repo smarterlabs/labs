@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import BlockContent from '@sanity/block-content-to-react'
+import YouTube from 'react-youtube-embed'
 import { secondaryColor, white } from '../config/colors'
 import SanityImg from './sanity-image'
 
@@ -42,8 +43,9 @@ const serializers = {
 			)
 		},
 		youtubeEmbed(arg){
-			console.log(arg)
-			return <div>Video</div>
+			return(
+				<YouTube id={arg.node.id} />
+			)
 		},
 	},
 }
