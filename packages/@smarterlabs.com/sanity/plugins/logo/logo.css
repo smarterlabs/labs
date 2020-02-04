@@ -1,6 +1,0 @@
-.logo{
-	width: 80px;
-	@media(min-width: 200px){
-		width: 105px;
-	}
-}

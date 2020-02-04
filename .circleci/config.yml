@@ -42,17 +42,6 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  build-smarterlabs-com:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Build Applications
-          command: yarn run build:smarterlabs.com
-      - persist_to_workspace:
-          root: ~/repo
-          paths: .
   test:
     <<: *defaults
     steps:
@@ -80,14 +69,6 @@ jobs:
       - run:
           name: Deploy App Boilerplate to Production
           command: yarn run deploy:app-boilerplate
-  deploy-smarterlabs-com:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Deploy smarterlabs.com to Production
-          command: yarn run deploy:smarterlabs.com
 workflows:
   version: 2
   build_test_deploy:
@@ -102,13 +83,6 @@ workflows:
               only: master
           requires:
             - test
-      - build-smarterlabs-com:
-          filters:
-            branches:
-              only: master
-          context: smarterlabs.com
-          requires:
-            - test
       - build-app-boilerplate:
           filters:
             branches:
@@ -116,13 +90,6 @@ workflows:
           context: app-boilerplate
           requires:
             - test
-      - deploy-smarterlabs-com:
-          filters:
-            branches:
-              only: master
-          context: smarterlabs.com
-          requires:
-            - build-smarterlabs-com
       - deploy-app-boilerplate:
           filters:
             branches:

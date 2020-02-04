@@ -5,7 +5,7 @@ const defaultTargets = {
 	android: 30,
 	chrome: 35,
 	edge: 14,
-	explorer: 9,
+	// explorer: 9,
 	firefox: 52,
 	safari: 8,
 	ucandroid: 1,
